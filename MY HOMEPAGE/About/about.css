@@ -1,0 +1,46 @@
+#menu ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+  color:#000;
+
+}
+
+#menu li{
+  display: inline;
+  float:left;
+}
+
+#menu a{
+    color:#000;
+    font-family: 'Helvetica';
+    text-align: center;
+    font-size: 15px;
+    display:block;
+    width:100px;
+    text-decoration:none;
+    border-right:  2px solid #000;
+}
+
+#menu{
+  position: fixed;
+  top:20px;
+  left: 35%
+}
+
+img{
+  position: relative;
+  top:160px;
+  left:300px;
+}
+
+#aboutMe{
+  font-family: 'Comic Sans MS';
+  position: relative;
+  top:-20px;
+  left:550px;
+  font-size: 17px;
+  font-weight: lighter;
+
+}
