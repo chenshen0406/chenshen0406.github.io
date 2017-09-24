@@ -1,0 +1,10 @@
+ .redPara{
+   color: red;
+   font-size: 32px
+ }
+ #firstPara{
+   font-size: 15px;
+ }
+ p span{
+   font-style: italic;
+ }
