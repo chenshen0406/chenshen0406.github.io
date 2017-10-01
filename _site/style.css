@@ -1,0 +1,21 @@
+h1 {
+  color: #bb8800;
+  font-size: 64px;
+  line-height: 96px;
+  text-decoration: line-through;
+  border: 2px solid blue; }
+
+.redPara {
+  color: #bb8800;
+  font-size: 32px;
+  line-height: 48px;
+  text-decoration: line-through;
+  color: #bb8800; }
+  .redPara a {
+    text-decoration: none; }
+
+#firstPara {
+  font-size: 15px; }
+
+p span {
+  font-style: italic; }
