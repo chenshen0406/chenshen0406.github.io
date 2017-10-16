@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="utf-8" />
+       <title>Project3</title>
+  </head>
+
+<body>
+  <p style="position:absolute; top: 70px; left:550px;font-family: 'Bentonsans'; font-size:25px">
+    Composition of New Entrepreneurs </p>
+    <p style="position:absolute; top: 120px; left:750px;font-family: 'Bentonsans'; font-size:12px">
+      Source: 2017 Kauffman Index of Startup activity </p>
+    <p style="color:grey;position:absolute; top: 480px; left:440px;font-family: 'Bentonsans'; font-size:10px">Fitst bar:White (55.9%)<br><br>Second bar:Black (9.24%)<br> <br>Third bar: Asian(7.59%)<br><br>  Forth bar: Latino (24.13%)  <br><br>Fifth bar: Other (3.46%)</p>
+    <p style="color:grey;position:absolute; top: 480px; left:570px;font-family: 'Bentonsans'; font-size:10px">Fitst bar:Male (60.51%)<br><br>Second bar:Female (39.49%)</p>
+    <p style="color:grey;position:absolute; top: 480px; left:710px;font-family: 'Bentonsans'; font-size:10px">Fitst bar:Immigrant (29.5%)<br><br>Second bar:Native-Born (70.5%)</p>
+    <p style="color:grey;position:absolute; top: 480px; left:870px;font-family: 'Bentonsans'; font-size:10px">Fitst bar:Ages 20-34 (24.37%)<br><br>Second bar:Ages 35-44 (24.04%)<br> <br>Third bar: Ages 45-54 (26.13%)<br><br>  Forth bar: Ages 55-64 (25.46%)</p>
+
+    <svg id="mysvg" width="1352" height="664">
+      <rect x="500" y="170" width="555.9" height="20" class="rectangle" fill="#B1696D"/>
+      <rect x="500" y="210" width="92.4" height="20" class="rectangle" fill="#E4BCA9"/>
+      <rect x="500" y="250" width="75.9" height="20" class="rectangle"fill="#738289"/>
+      <rect x="500" y="290" width="241.3" height="20" class="rectangle"fill="#F8E59A"/>
+      <rect x="500" y="330" width="34.6" height="20" class="rectangle"fill="#B7A9A1"/>
+    </svg>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+  var svg = d3.select("#mysvg")
+    .attr("width", window.innerWidth)
+    .attr("height", window.innerHeight);
+
+  function draw(dataArray) {
+
+    var updateBarChart = svg.selectAll(".rectangle")
+      .data(dataArray);
+
+    updateBarChart.exit()
+      .transition().duration(1000)
+      .attr("width", 0)
+      .attr("fill", "#8B8075")
+      .remove();
+
+    var enterRect = updateBarChart.enter().append("rect")
+      .attr("width", 0)
+      .attr("x", "500")
+      .attr("y", function(w, index) {
+        return 170+40 * index;
+      })
+      .attr("class", "rectangle");
+
+      function getRandomColor() {
+          var letters = '0123456789ABCDEF'.split('');
+          var color = '#';
+          for (var i = 0; i < 6; i++ ) {
+              color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+      }
+
+      var color = getRandomColor()
+
+    updateBarChart.merge(enterRect)
+      .transition().duration(1000)
+      .attr("width", function(w) {
+        return w;
+      })
+      .attr("fill", color);
+  }
+
+
+</script>
+
+<button onclick="{location.href='project3.html'}" style="position:relative; left:450px; top: -300px;">by race</button>
+<!-- <p style="color:black;font-family: 'Bentonsans'; font-size:10px"> Fitst bar:white  Second bar:black  Third bar: Asian  Forth bar: Latino  Fifth bar: Other </p> -->
+<button onclick="draw([605.1,394.9])" style="position:relative; left:520px; top: -300px;">By gender</button>
+<button onclick="draw([295,705])" style="position:relative; left:580px; top: -300px;">By nativaty</button>
+<button onclick="draw([243.7,240.4,261.3,254.6])" style="position:relative; left:670px; top: -300px;">By age</button>
+
+</body>
+
+</html>
