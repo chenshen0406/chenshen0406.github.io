@@ -12,9 +12,6 @@
 
 
     <svg id="mysvg">
-  <circle cx="50" cy="50" r="10" class="dot"></circle>
-  <circle cx="100" cy="50" r="10" class="dot"></circle>
-  <circle cx="150" cy="50" r="10" class="dot"></circle>
 </svg>
 
 
@@ -22,59 +19,76 @@
 
 <script>
 
-var svg = d3.select("#mysvg")
-  // .attr("width", window.innerWidth)
-  // .attr("height", window.innerHeight);
-var myData = [25,5,17,40,15];
-// var myData = [25,5];(2)
-
-function draw(dataArray){
-
-// or
-var svg = d3.select("#mysvg");
-var circles = svg.selectAll(".dot")
-
-var circles = d3.select("#mysvg")
-var svg = d3.select("#mysvg")
 
 
-var circles = svg.selectAll(".dot")
-  .data(dataArray)
+  var svg = d3.select("#mysvg")
+    .attr("width", window.innerWidth)
+    .attr("height", window.innerHeight);
 
-  .selectAll(".dot")
-  .data(myData);
+  function draw(dataArray) {
 
-  circles.exit()
-  .transition().duration(1000)
-  .attr("r",0)
-  .remove();
+    var labels = svg.selectAll(".label")
+      .data(dataArray);
 
-  circles
-    .attr("r",function(d){
-      return d;
-    });
+    labels.exit().remove();
 
-var enterCircles = circles.enter()
-    // 有两个数据没有元素与之对应，这时候 D3 会建立两个空的元素与数据对应，这一部分就称为 Enter
-    .append("circle")
-    .attr("r",function(d){
-      return d;
-    })
-    .attr("r", 0)
-    .attr("cy","50")
-    .attr("cx",function(d,index){
-      return 50 * (index + 1)
-    })
-    .attr("class","dot");
 
-circles.merge(enterCircles)
-  .transition().duration(1000)
-  .attr("r",function(d){
-  return d;
+
+    var enterLabels = labels.enter().append("text")
+      .attr("class", "label")
+      .attr("y", "20")
+      .attr("font-size","8px")
+      .attr("text-anchor","middle")
+      .attr("x", function(d, index) {
+        return 50 * (index + 1);
+      })
+      // .attr("class", "dot");
+
+    labels.merge(enterLabels)
+      .text(function(d){
+        return d.country;
+      })
+
+      var circles = svg.selectAll(".dot")
+        .data(dataArray);
+
+      circles.exit()
+        .transition().duration(1000)
+        .attr("r", 0)
+        .attr("fill", "red")
+        .remove();
+
+      var enterCircles = circles.enter().append("circle")
+      .attr("r",0)
+      .attr("cy",50)
+      .attr("cx",function(d,index){
+        return 50 * (index + 1);
+      })
+      .attr("class","dot");
+
+      circles.merge(enterCircles)
+      .transition().duration(1000)
+      .attr("r", function(d) {
+        return d.value;
+      })
+      .attr("fill", function(d){
+        return d.color;
+      });
+
+  }
+
+  // draw([2, 4, 6, 8]);
+
+// d3.csv("data.csv", function(error, data){
+//   console.log(data);
+//   draw(data);
+// })
+d3.json("data.json", function(error, data) {
+  console.log(data);
+  draw(data);
 });
+// console.log("hi!");
 
-
-}
 </script>
 
 
