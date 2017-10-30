@@ -133,7 +133,9 @@ padding:0;
 
 /* Make all arms rotate around the same center point. */
 /* Optional: Use transition for animation. */
-#hour,
+#hour{
+      transform-origin: 300px 300px;
+}
 #minute {
     transform-origin: 300px 300px;
 }
