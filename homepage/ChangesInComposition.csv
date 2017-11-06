@@ -1,0 +1,20 @@
+Class,1996 [YR1996],2016 [YR2016]
+Male,0.5633,0.6051
+Female,0.4367,0.3949
+White,0.7712,0.5559
+Black,0.0843,0.0924
+Asian,0.0342,0.0759
+Latino,0.1001,0.2412
+Other,0.0102,0.0346
+Immigrant,0.1329,0.295
+Native-Born,0.8671,0.705
+Ages 20-34,0.3427,0.2437
+Ages 35-44,0.2736,0.2404
+Ages 45-54,0.2355,0.2613
+Ages 55-64,0.1483,0.2546
+Less than High School,0.1716,0.1692
+High School Graduate,0.3234,0.2663
+Some College,0.2678,0.264
+College Graduate,0.2372,0.3005
+Veterans,0.1249,0.0416
+Non-Veterans,0.8751,0.9584

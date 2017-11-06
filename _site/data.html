@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="utf-8" />
+       <link rel="stylesheet" href="style.css" />
+       <title>My Homepage</title>
+
+  </head>
+  <body>
+<a href="test.html">Homepage</a>
+<a href="contact.html">Contact</a>
+
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+
+  d3.queue()
+    .defer(d3.csv,"homepage/ChangesInComposition.csv")
+    .defer(d3.csv,"homepage/StartupActivityIndex.csv")
+    .awaitAll(function(error,data){
+      var CompositionData = data[0];
+
+      CompositionData.forEach(function(d,i) {
+
+        for (var poop in d){
+          var num = +d[poop]
+          if (isNaN(num) == false){
+            d[poop] = num;
+          }
+          else if (poop.indexOf("[YR")== 5) {
+            d[poop] = 0;
+          }
+        }
+
+
+      });
+
+            // console.log(CompositionData);
+            // var contryData = CompositionData.filter(function)
+
+</script>
+
+
+  
+
+  </body>
+</html>

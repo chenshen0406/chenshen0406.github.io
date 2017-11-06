@@ -6,18 +6,133 @@
 
   </head>
   <body>
-    <svg id="mysvg">
-</svg>
 
 
-<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
 <script>
+//
+//
+//   d3.csv("ChangesInComposition.csv", function(error, data){
+//     console.log(data);
+//  })
+//
+//  d3.csv("StartupActivityIndex.csv", function(error, data){
+//    console.log(data);
+// })
+//
+// d3.csv("RateByGender.csv", function(error, data){
+//   console.log(data);
+// })
+//
+// d3.csv("RateByRace.csv", function(error, data){
+//   console.log(data);
+// })
+//
+// d3.csv("RateByNativity.csv", function(error, data){
+//   console.log(data);
+// })
+//
+// d3.csv("RateByAge.csv", function(error, data){
+//   console.log(data);
+// })
+//
+// d3.csv("RateByEducation.csv", function(error, data){
+//   console.log(data);
+// })
+//
+// d3.csv("RateByVeteranStatus.csv", function(error, data){
+//   console.log(data);
+// })
+//
+// d3.csv("StatesIndex.csv", function(error, data){
+//   console.log(data);
+// })
 
 
-  d3.csv("datalist.csv", function(error, data){
-    console.log(data);
- })
+// all numbere are percentage
+
+  d3.queue()
+    .defer(d3.csv, "nation.csv")
+    .defer(d3.csv, "StatesIndex.csv")
+    .defer(d3.csv, "ChangesInComposition.csv")
+
+
+    .awaitAll(function(error, data) {
+
+      var nationData = data[0];
+
+      for (var i = 0; i < nationData.length; i++) {
+        console.log(nationData[i]);
+      }
+
+      nationData.forEach(function(d, i) {
+
+        for (var poop in d) {
+          var num = +d[poop];
+          var indexOfYR = poop.indexOf("[YR");
+          if (isNaN(num) == false) {
+            d[poop] = num;
+          }
+
+        }
+
+      });
+
+      console.log(nationData);
+
+
+      var stateData = data[1];
+
+      for (var i = 0; i < stateData.length; i++) {
+        console.log(stateData[i]);
+      }
+
+      stateData.forEach(function(d, i) {
+
+        for (var poop in d) {
+          var num = +d[poop];
+          var indexOfYR = poop.indexOf("[VA");
+          if (isNaN(num) == false) {
+            d[poop] = num;
+          }
+
+        }
+
+      });
+
+      console.log(nationData);
+
+
+
+
+      var changeData = data[2];
+
+      for (var i = 0; i < changeData.length; i++) {
+        console.log(changeData[i]);
+      }
+
+      changeData.forEach(function(d, i) {
+
+        for (var poop in d) {
+          var num = +d[poop];
+          var indexOfYR = poop.indexOf("[YR");
+          if (isNaN(num) == false) {
+            d[poop] = num;
+          }
+
+        }
+
+      });
+
+      console.log(changeData);
+
+    });
+
+
+
+
+
 
  </script>
 
