@@ -2,94 +2,317 @@
 <html>
   <head>
        <meta charset="utf-8" />
+       <link rel="stylesheet" href="final.css" />
        <title>data</title>
 
   </head>
   <body>
-    <img src="edit/1.png" height="180" style="  position: relative;top:160px;left:300px;">
-    <img src="edit/2.png" height="180" style="  position: relative;top:160px;left:300px;">
+
+    <div class="MainWrapper">
+
+		<header>
+			<nav>
+        <ul id="menu">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
+          </ul>
+      </nav>
+			<div id="banner">
+				<div class="inner">
+					<h1>THE TREND OF US STARTUP ACTIVITY</h1>
+                <!-- <img id="portraits" src="portraits.png"> -->
+				</div>
+			</div>
+		</header>
+		<div class="content">
+
+      <section class="nationSection">
+        <div class="nationWrapper">
+          <h2>Startup Activity Index</h2>
+          <svg id="nationSvg" width = "960" height = "500"></<svg>
+        </div>
+      </section>
+
+      <section class="genderSection">
+        <div class="genderWrapper">
+          <h2>Rate of New Entrepreneurs by gender</h2>
+
+          <svg id="genderSvg" width = "960" height = "500"></<svg>
+            <img scr="1.png">
+        </div>
+      </section>
+
+
+			<section class="MapSection">
+				<div class="mapWrapper">
+					<h2>States List—Startup Activity Index</h2>
+					<svg id="mysvg" width = "960" height = "500"></<svg>
+          <div id="popup" style="border: 1px solid black; background-color: white; display:none;"></div>
+				</div>
+			</section>
+
+		</div>
+
+
 
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
+<script src="https://unpkg.com/topojson@3"></script>
+
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-composite-projections/1.0.0/composite-projections.min.js"></script> -->
+
+
 <script>
+// get data
+d3.queue()
+  .defer(d3.csv, "nation.csv")
+  .defer(d3.csv, "StatesIndex.csv")
+  .defer(d3.csv, "ChangesInComposition.csv")
 
-  d3.queue()
-    .defer(d3.csv, "nation.csv")
-    .defer(d3.csv, "StatesIndex.csv")
-    .defer(d3.csv, "ChangesInComposition.csv")
 
+  .awaitAll(function(error, data) {
 
-    .awaitAll(function(error, data) {
+    var nationData = data[0];
 
-      var nationData = data[0];
+    for (var i = 0; i < nationData.length; i++) {
+      console.log(nationData[i]);
+    }
 
-      for (var i = 0; i < nationData.length; i++) {
-        console.log(nationData[i]);
-      }
+    nationData.forEach(function(d, i) {
 
-      nationData.forEach(function(d, i) {
-
-        for (var poop in d) {
-          var num = +d[poop];
-          var indexOfYR = poop.indexOf("[YR");
-          if (isNaN(num) == false) {
-            d[poop] = num;
-          }
-
+      for (var poop in d) {
+        var num = +d[poop];
+        var indexOfYR = poop.indexOf("[YR");
+        if (isNaN(num) == false) {
+          d[poop] = num;
         }
 
-      });
-
-      console.log(nationData);
-
-
-      var stateData = data[1];
-
-      for (var i = 0; i < stateData.length; i++) {
-        console.log(stateData[i]);
       }
-
-      stateData.forEach(function(d, i) {
-
-        for (var poop in d) {
-          var num = +d[poop];
-          var indexOfYR = poop.indexOf("[VA");
-          if (isNaN(num) == false) {
-            d[poop] = num;
-          }
-
-        }
-
-      });
-
-      console.log(nationData);
-
-
-
-
-      var changeData = data[2];
-
-      for (var i = 0; i < changeData.length; i++) {
-        console.log(changeData[i]);
-      }
-
-      changeData.forEach(function(d, i) {
-
-        for (var poop in d) {
-          var num = +d[poop];
-          var indexOfYR = poop.indexOf("[YR");
-          if (isNaN(num) == false) {
-            d[poop] = num;
-          }
-
-        }
-
-      });
-
-      console.log(changeData);
 
     });
+
+    console.log(nationData);
+
+
+    var stateData = data[1];
+
+    for (var i = 0; i < stateData.length; i++) {
+      console.log(stateData[i]);
+    }
+
+    stateData.forEach(function(d, i) {
+
+      for (var poop in d) {
+        var num = +d[poop];
+        var indexOfYR = poop.indexOf("[VA");
+        if (isNaN(num) == false) {
+          d[poop] = num;
+        }
+
+      }
+
+    });
+
+    console.log(stateData);
+
+
+
+
+
+    var changeData = data[2];
+
+    for (var i = 0; i < changeData.length; i++) {
+      console.log(changeData[i]);
+    }
+
+    changeData.forEach(function(d, i) {
+
+      for (var poop in d) {
+        var num = +d[poop];
+        var indexOfYR = poop.indexOf("[YR");
+        if (isNaN(num) == false) {
+          d[poop] = num;
+        }
+
+      }
+
+    });
+
+    console.log(changeData);
+
+  });
+
+var portraits = d3.select("#portraits")
+.attr("width", window.innerWidth);
+
+  d3.json("usa.json", function(error,data){
+    console.log(data);
+    var geoJSON = topojson.feature(data, data.objects.states);
+    console.log(geoJSON);
+
+    var proj = d3.geoAlbersUsa()
+      .fitSize([window.innerWidth/1.5, window.innerHeight/1.5], geoJSON);
+
+    var path = d3.geoPath()
+      .projection(proj);
+
+
+      var svg = d3.select("#mysvg")
+      .attr("width", window.innerWidth)
+      .attr("height", window.innerHeight);
+
+      var states = svg.selectAll("path")
+        .data(geoJSON.features);
+
+
+        states.enter().append("path")
+          .attr("d", function(d) {
+            return path(d);
+          })
+
+          // .attr("id", function(d) {
+          //        return d.id;
+          //      })
+              //  .attr("stroke", "#888")
+              //  .attr("stroke-width", 1)
+              //  .attr("fill", function(d){
+              //    if (d.id == "MA") {
+              //      return "green";
+              //    }
+              //    else {
+              //      return "#ccc";
+              //    }
+              //  });
+
+
+          // .attr("fill", "lightblue")
+          .attr("stroke", "white")
+          .attr("stroke-width", 1)
+          .on("mouseover", function(d,i) {
+            d3.select(this)
+            .style("fill", "#f8f6d7");
+
+        })
+
+      .on("mouseout", function(d,i) {
+          d3.select(this).interrupt();
+          d3.select(this)
+          .style("fill", "#E2C93F");
+          // d3.json("data.json", function(error, data) {
+          //   console.log(data);
+          //   draw(data);
+          // });
+          // .style("fill", "#aca");
+        });
+
+
+          // .on("mouseover", function(d,i) {
+          //      states.select(this)
+          //        .style("fill", "red");
+          //      })
+          //    .on("mouseout", function(d,i) {
+          //      states.select(this).interrupt();
+          //      states.select(this)
+          //        .style("fill", "#aca");
+          //      });
+
+//   var points = [
+//   {"name": "MA", "coords": [-71.3824,42.4072]},
+// ];
+//
+// var points = svg.selectAll("circle")
+//   .data(points);
+//
+// points.enter().append("circle")
+//   .attr("fill", "white")
+//   .attr("r", 10)
+//   .attr("transform", function(d){
+//     return "translate(" + proj(d.coords) + ")";
+//   })
+  });
+
+
+
+  // d3.queue()
+  //   .defer(d3.csv, "nation.csv")
+  //   .defer(d3.csv, "StatesIndex.csv")
+  //   .defer(d3.csv, "ChangesInComposition.csv")
+  //
+  //
+  //   .awaitAll(function(error, data) {
+  //
+  //     var nationData = data[0];
+  //
+  //     for (var i = 0; i < nationData.length; i++) {
+  //       console.log(nationData[i]);
+  //     }
+  //
+  //     nationData.forEach(function(d, i) {
+  //
+  //       for (var poop in d) {
+  //         var num = +d[poop];
+  //         var indexOfYR = poop.indexOf("[YR");
+  //         if (isNaN(num) == false) {
+  //           d[poop] = num;
+  //         }
+  //
+  //       }
+  //
+  //     });
+  //
+  //     console.log(nationData);
+  //
+  //
+  //     var stateData = data[1];
+  //
+  //     for (var i = 0; i < stateData.length; i++) {
+  //       console.log(stateData[i]);
+  //     }
+  //
+  //     stateData.forEach(function(d, i) {
+  //
+  //       for (var poop in d) {
+  //         var num = +d[poop];
+  //         var indexOfYR = poop.indexOf("[VA");
+  //         if (isNaN(num) == false) {
+  //           d[poop] = num;
+  //         }
+  //
+  //       }
+  //
+  //     });
+  //
+  //     console.log(nationData);
+  //
+  //
+  //
+  //
+  //     var changeData = data[2];
+  //
+  //     for (var i = 0; i < changeData.length; i++) {
+  //       console.log(changeData[i]);
+  //     }
+  //
+  //     changeData.forEach(function(d, i) {
+  //
+  //       for (var poop in d) {
+  //         var num = +d[poop];
+  //         var indexOfYR = poop.indexOf("[YR");
+  //         if (isNaN(num) == false) {
+  //           d[poop] = num;
+  //         }
+  //
+  //       }
+  //
+  //     });
+  //
+  //     console.log(changeData);
+  //
+  //   });
 
 
 

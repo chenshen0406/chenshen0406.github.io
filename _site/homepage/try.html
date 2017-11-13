@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="utf-8" />
+       <link rel="stylesheet" href="final.css" />
+       <title>data</title>
+
+  </head>
+  <body>
+<svg width="960" height="500"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var parseTime = d3.timeParse("%Y");
+
+var x = d3.scaleTime()
+    .rangeRound([0, width]);
+
+var y = d3.scaleLinear()
+    .rangeRound([height, 0]);
+
+var line = d3.line()
+    .x(function(d) { return x(d.year); })
+    .y(function(d) { return y(d.nationIndex); });
+
+
+
+    d3.queue()
+      .defer(d3.csv, "index.csv")
+      .defer(d3.csv, "StatesIndex.csv")
+      .defer(d3.csv, "ChangesInComposition.csv")
+
+
+      .awaitAll(function(error, data) {
+    var IndexData = data[0];
+
+    for (var i = 0; i < IndexData.length; i++) {
+      console.log(IndexData[i]);
+    }
+
+    IndexData.forEach(function(d, i) {
+
+      for (var poop in d) {
+        var num = +d[poop];
+        var indexOfYR = poop.indexOf("[YR");
+        if (isNaN(num) == false) {
+          d[poop] = num;
+        }
+
+      }
+
+    });
+
+    console.log(IndexData);
+
+
+// d3.csv("index.csv", function(d) {
+//   d.year = parseTime(d.date);
+//   d.nationIndex = +d.nationIndex;
+//   return d;
+// }, function(error, data) {
+//   if (error) throw error;
+
+  d3.csv("index.csv", function(error, data) {
+    if (error) throw error;
+
+    // format the data
+    data.forEach(function(d) {
+        d.year = parseTime(d.year);
+        d.nationIndex = +d.nationIndex;
+    });
+
+
+  x.domain(d3.extent(data, function(d) { return d.year; }));
+  y.domain(d3.extent(data, function(d) { return d.nationIndex; }));
+
+  g.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x))
+    .select(".domain")
+      .remove();
+
+  g.append("g")
+      .call(d3.axisLeft(y))
+    .append("text")
+      .attr("fill", "#000")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("nationIndex");
+
+  g.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", 1.5)
+      .attr("d", line);
+
+});
+});
+
+</script>
+</body>
+</html>
