@@ -26,7 +26,7 @@ padding:0;
 #menu{
 position:absolute;
   top:20px;
-  left:33% ;
+  left:38% ;
 }
 body {
 	margin: 0;
@@ -61,8 +61,19 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 25px;
   letter-spacing: 8px;
+}
+
+#banner .inner p
+{
+  margin: 0;
+  font-family: "Helvetica";
+  color: black;
+  font-weight:lighter;
+  font-size: 12px;
+
+
 }
 
 
@@ -86,6 +97,22 @@ nav
 }
 
 
+.ageSection
+{
+  background: transparent;
+  color: black;
+  text-align: center;
+  padding: 80px 0;
+  height:800px;
+}
+.enducationSection
+{
+  background: transparent;
+  color: black;
+  text-align: center;
+  padding: 80px 0;
+  height:800px;
+}
 .genderSection
 {
   background: transparent;
@@ -94,8 +121,86 @@ nav
   padding: 80px 0;
   height:800px;
 }
+.nativitySection
+{
+  background: transparent;
+  color: black;
+  text-align: center;
+  padding: 80px 0;
+  height:800px;
+}
+.raceSection
+{
+  background: transparent;
+  color: black;
+  text-align: center;
+  padding: 80px 0;
+  height:800px;
+}
+.veteranSection
+{
+  background: transparent;
+  color: black;
+  text-align: center;
+  padding: 80px 0;
+  height:800px;
+}
 
+.ageSection h2
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.ageSection h2
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.enducationSection h2
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
 .genderSection h2
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.nativitySection h2
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.raceSection h2
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.veteranSection h2
 {
   margin: 0;
   font-family: "futura",sans-serif;
@@ -110,7 +215,32 @@ nav
   max-width: 1080px;
   margin: 0 auto;
 }
+.ageWrapper
+{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.enducationWrapper
+{
+  max-width: 1080px;
+  margin: 0 auto;
+}
 .genderWrapper
+{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.nativityWrapper
+{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.raceWrapper
+{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.veteranWrapper
 {
   max-width: 1080px;
   margin: 0 auto;
@@ -130,7 +260,7 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 25px;
   letter-spacing: 3px;
 }
 
@@ -147,14 +277,50 @@ nav
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
+  position: relative;
 }
 
 .selected{
-  border: 1px; 
+  border: 1px;
   solid black;
   background-color: white;
   display:none;
+}
+
+.tip {
+  opacity: 0;
+  background-color: #c8ac99;
+  font-family: "futura",sans-serif;
+  font-size: 13px;
+}
+
+.tooltip{
+  position: absolute;
+
+  width:350px;
+  height: 180px;
+  background-color: rgb(255,255,255);
+  opacity:0;
+}
+.explanation{
+  width:500px;
+  height: 300px;
+  background-color: #efebe7;
+  position:absolute;
+    left:35% ;
+}
+.tipStates{
+  text-align: center;
+  font-weight: bold;
+  font-family: "futura",sans-serif;
+  font-size: 20px;
+}
+
+.tooltip p{
+  margin-left: 15px;
+  text-align: left;
+  font-family: "futura",sans-serif;
+  font-size: 13px;
 }
 
 
