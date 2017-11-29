@@ -145,7 +145,7 @@ d3.queue()
           .attr("stroke", "steelblue")
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
-          .attr("stroke-width", 1.5)
+          .attr("stroke-width", 3)
           .attr("d", line)
           .attr("opacity",0)
           .transition()
@@ -190,6 +190,7 @@ d3.queue()
 
 
 // Age line chart by age
+
     var ageSvg = d3.select("#ageSvg"),
         agemargin = {top: 20, right: 150, bottom: 30, left: 160},
         width = +ageSvg.attr("width") - agemargin.left - agemargin.right,
@@ -207,6 +208,8 @@ d3.queue()
 
     var Ay = d3.scaleLinear()
         .rangeRound([height, 0]);
+
+    var Az = d3.scaleOrdinal(d3.schemeCategory10);
 
     var Aline = d3.line()
         .x(function(d) { return x(d.Year); })
@@ -230,14 +233,14 @@ d3.queue()
     ageData.push(RateData.map(function(d) {
       return {
         Year: d.Year,
-        key: "35to44",
+        key: "45to54",
         value: d["45to54"]
       }
     }));
     ageData.push(RateData.map(function(d) {
       return {
         Year: d.Year,
-        key: "35to44",
+        key: "55to64",
         value: d["55to64"]
       }
     }));
@@ -247,37 +250,50 @@ d3.queue()
 
     x.domain(d3.extent(RateData, function(d) { return d.Year; }));
     y.domain([0.1 , 0.45]);
+    Az.domain(RateData.map(function(d){return d.id}))
 
     var lines = Ag.selectAll("path")
       .data(ageData);
 
+
     lines.enter().append("path")
           .attr("d", Aline)
           .attr("fill", "none")
-          .attr("stroke", "steelblue")
+          .style("stroke", function(d) { return Az(d[0].key); })
+          // .attr("stroke", "steelblue")
           .attr("stroke-linejoin", "round")
           .attr("stroke-linecap", "round")
-          .attr("stroke-width", 1.5)
-          .attr("opacity",0)
-          .transition()
-            .duration(2000)
-            .attr("opacity",1);
+          .attr("stroke-width", 3)
+          .attr("opacity", 0)
+          .on("mouseover", function(d){
+              d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("stroke-width", 10)
+                .attr("stroke", "#E2C93F")
+              })
 
-          // .on("mouseover", function(d){
-          //     d3.select(this)
-          //       .transition()
-          //       .duration(500)
-          //       .attr("stroke-width", 3)
-          //       .attr("stroke", "#E2C93F")
-          //     })
-          //
-          // .on("mouseout", function(){
-          //     d3.select(this)
-          //     .transition()
-          //     .duration(500)
-          //     .attr("stroke-width", 1.5)
-          //     .attr("stroke", "steelblue");
-          //   });
+          .on("mouseout", function(){
+              d3.select(this)
+              .transition()
+              .duration(500)
+              .attr("stroke-width", 3)
+              .style("stroke", function(d) { return Az(d.id); })
+              // .attr("stroke", "steelblue");
+            })
+            .transition()
+              .duration(2000)
+              .attr("opacity",1);
+
+          //     var lines = Ag.selectAll("path")
+          //       .data(ageData);.append("text")
+          // .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
+          // .attr("transform", function(d) { return "translate(" + x(d.Year) + "," + y(d.value) + ")"; })
+          // .attr("x", 3)
+          // .attr("dy", "0.35em")
+          // .style("font", "10px sans-serif")
+          // .text(function(d) { return d[0].key; });
+
 
       Ag.append("g")
           .attr("transform", "translate(0," + height + ")")
@@ -366,8 +382,23 @@ d3.queue()
                     .attr("stroke", "steelblue")
                     .attr("stroke-linejoin", "round")
                     .attr("stroke-linecap", "round")
-                    .attr("stroke-width", 1.5)
+                    .attr("stroke-width", 3)
                     .attr("opacity",0)
+                    .on("mouseover", function(d){
+                        d3.select(this)
+                          .transition()
+                          .duration(500)
+                          .attr("stroke-width", 10)
+                          .attr("stroke", "#E2C93F")
+                        })
+
+                    .on("mouseout", function(){
+                        d3.select(this)
+                        .transition()
+                        .duration(500)
+                        .attr("stroke-width", 3)
+                        .attr("stroke", "steelblue");
+                      })
                     .transition()
                       .duration(2000)
                       .attr("opacity",1);
@@ -437,8 +468,22 @@ d3.queue()
                         .attr("stroke", "steelblue")
                         .attr("stroke-linejoin", "round")
                         .attr("stroke-linecap", "round")
-                        .attr("stroke-width", 1.5)
+                        .attr("stroke-width", 3)
                         .attr("opacity",0)
+                        .on("mouseover", function(d){
+                            d3.select(this)
+                              .transition()
+                              .duration(500)
+                              .attr("stroke-width", 10)
+                              .attr("stroke", "#E2C93F")
+                            })
+                        .on("mouseout", function(){
+                            d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .attr("stroke-width", 3)
+                            .attr("stroke", "steelblue");
+                          })
                         .transition()
                           .duration(2000)
                           .attr("opacity",1);
@@ -507,8 +552,23 @@ d3.queue()
                         .attr("stroke", "steelblue")
                         .attr("stroke-linejoin", "round")
                         .attr("stroke-linecap", "round")
-                        .attr("stroke-width", 1.5)
+                        .attr("stroke-width", 3)
                         .attr("opacity",0)
+                        .on("mouseover", function(d){
+                            d3.select(this)
+                              .transition()
+                              .duration(500)
+                              .attr("stroke-width", 10)
+                              .attr("stroke", "#E2C93F")
+                            })
+
+                        .on("mouseout", function(){
+                            d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .attr("stroke-width", 3)
+                            .attr("stroke", "steelblue");
+                          })
                         .transition()
                           .duration(2000)
                           .attr("opacity",1);
@@ -592,8 +652,23 @@ d3.queue()
                         .attr("stroke", "steelblue")
                         .attr("stroke-linejoin", "round")
                         .attr("stroke-linecap", "round")
-                        .attr("stroke-width", 1.5)
+                        .attr("stroke-width", 3)
                         .attr("opacity",0)
+                        .on("mouseover", function(d){
+                            d3.select(this)
+                              .transition()
+                              .duration(500)
+                              .attr("stroke-width", 10)
+                              .attr("stroke", "#E2C93F")
+                            })
+
+                        .on("mouseout", function(){
+                            d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .attr("stroke-width", 3)
+                            .attr("stroke", "steelblue");
+                          })
                         .transition()
                           .duration(2000)
                           .attr("opacity",1);
@@ -663,8 +738,23 @@ d3.queue()
                         .attr("stroke", "steelblue")
                         .attr("stroke-linejoin", "round")
                         .attr("stroke-linecap", "round")
-                        .attr("stroke-width", 1.5)
+                        .attr("stroke-width", 3)
                         .attr("opacity",0)
+                        .on("mouseover", function(d){
+                            d3.select(this)
+                              .transition()
+                              .duration(500)
+                              .attr("stroke-width", 10)
+                              .attr("stroke", "#E2C93F")
+                            })
+
+                        .on("mouseout", function(){
+                            d3.select(this)
+                            .transition()
+                            .duration(500)
+                            .attr("stroke-width", 3)
+                            .attr("stroke", "steelblue");
+                          })
                         .transition()
                           .duration(2000)
                           .attr("opacity",1);
@@ -745,7 +835,8 @@ var portraits = d3.select("#portraits")
           .on("mouseover", function(d,i) {
             var mydata = dataLookup[d.id];
             d3.select(this)
-            .attr("fill", "#78464a");
+            .attr("fill", "#d2cfc4")
+            .attr("stroke-width",3);
             var tooltip= d3.select('.tooltip');
                 tooltip.transition()
                        .style('opacity',0.7)
@@ -780,8 +871,8 @@ var portraits = d3.select("#portraits")
         })
 
       .on("mouseout", function(d,i) {
-          d3.select(this).attr("fill", myFill(d));
-          var tooltip= d3.select('.tooltip');
+          d3.select(this)
+          .attr("fill", myFill(d));
           tooltip.transition()
                  .style('opacity',0);
         });

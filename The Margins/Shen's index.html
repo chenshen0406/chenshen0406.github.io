@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>The Margins-Article</title>
+  <meta name="description" content="">
+  <meta name="author" content="Shen Chen">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+ <link rel="stylesheet" href="css/TheMargins_styles.css">
+
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script>
+
+function changeImage()
+{
+var img = document.getElementById("portrait");
+img.src="images/portrait(2).jpg";
+return false;
+}
+
+function changeImageAgain()
+{
+var img = document.getElementById("portrait");
+img.src="images/portrait(3).jpg";
+return false;
+}
+
+</script>
+
+</head>
+<body>
+
+<!-- Hamburger menu
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<div class="MainWrapper">
+<header>
+
+<nav role="navigation" class="TheMargins_nav" >
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+
+    <!--
+    Some spans to act as a hamburger.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+        <a href="#"><li>Article 1</li></a>
+        <a href="#"><li>Article 2</li></a>
+        <a href="#"><li>Article 3</li></a>
+        <a href="#"><li>Article 4</li></a>
+        <a href="#"><li>Article 5</li></a>
+        <a href="#"><li>Article 6</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/"><li>More on Ruggles Media</li></a>
+
+    </ul>
+  </div>
+</nav>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="banner">
+      <div class="inner">
+        <h1 class="TheMargins_head">A CHALLENGING ROAD</h1>
+        <br><br>
+        <h2 class="TheMargins_head">African American Entrepreneurs Tale</h2>
+        <h3 class="TheMargins_head">November 27, 2017</h3>
+      </div>
+    </div>
+
+</header>
+
+<div class="content">
+
+  <section class="IntroductionSection">
+          <div class="CaptionWrapper">
+            <p class="Caption">	Corey Thomas, the CEO of Rapid7, a cyber security company that specializes
+              in data-analysis.Under him work 1,000 employees and his annual compensation
+              numbers extends seven figures. He is also a black man.</p>
+            <p class="credit">Credit: Rapid 7</p>
+          </div>
+    </section>
+
+    <section class="FirstSection">
+      <div class="TextWrapper">
+          <p class="byline">
+            By Megan Mckee, Brooks Sutherland, Shen Chen, Patrick Johnston
+            <hr style="border-bottom:0.1rem black solid; margin-top:-1.5rem;"/>
+          </p>
+          <p class="crosshead">
+            THOMAS AND HIS COMPANY
+          </p>
+          <p>
+          On the 13th floor of a high-rise in Downtown Boston, amidst the hustle and bustle below is a man named Corey Thomas. He is the CEO of Rapid7, a cyber security company that specializes in data-analysis.
+          </p>
+          <p>
+            Under him work 1,000 employees and his annual compensation numbers extends seven figures. He is also a black man, one of the few to hold an executive office in a business in the U.S., much less a technology firm.
+          </p>
+          <p>
+            Thomas, the son of a self-taught electrician and a school district secretary, greets people with a warm smile and candid demeanor. These qualities appear to have spread through his company’s headquarters, which are decked out with orange accents and all the touches we associate with high-tech companies: comfortable communal seating areas; an impressive snack array; and architectural elements that are both modern and edgy.
+          </p>
+          <p>
+            He seeks to create a work environment built on inherent trust and communication rather than demanding employees constantly prove their worth, an attitude he sees not only as problematic in the tech industry, but also cuts down on productivity. With a business that he has grown from 200 employees when he assumed the CEO position in 2012, to the 1000 it has today, Thomas has established himself as a leader in Boston and the world. Rapid7 now has 15 branches around the world, and Thomas was recently named one of the 20 most important African Americans in the industry by <a href="http://www.businessinsider.com/important-blacks-in-technology-2014-4#11-shellye-archambeau-36">Business Insider</a>.
+          </p>
+
+          <div class="portraits">
+            <button id="clickme" onclick="changeImage();" style="color:steelblue">Do you want to know how many African American CEOs in fortune 100 ?</button>
+            <button id="clickme" onclick="changeImageAgain();" style="color:steelblue">There are 51 tech companies in fortune 500, how many African American CEOs in top 51 tech companies ?</button>
+            <img id="portrait" src="images/portrait.jpg" style="height:340px;">
+            <!-- <p class=""><p> -->
+          </div>
+
+          <p>
+            According to the <a href="https://www.eeoc.gov/eeoc/statistics/reports/hightech/">Equal Employment Opportunity Commission</a>, African-Americans make up less than five percent of the technology industry’s workforce in Silicon Valley, and the percentage of African-Americans that occupy executive positions in the industry may be as low as one percent, according to the commission. And independent entrepreneurs have it just as bad as those already established in the sector.
+          </p>
+          <p>
+            It’s not just a lack of representation that’s a problem, black entrepreneurs face serious problems in their professional careers that their white counterparts do not. Most important is securing funding for their business idea.
+          </p>
+        </div>
+    </section>
+</div>
+</div>
+
+<div class="photoGallery">
+  <div class="ThomasWrapper">
+    <section class="gallerySection">
+      <div class="CaptionWrapper">
+      <p class="Caption">Under Corey Thomas’ work 1,000 employees and his annual compensation numbers extends seven figures.</p>
+      <p class="credit">Credit: Shen Chen</p>
+      </div>
+    </section>
+    </div>
+
+    <div class="diannaWrapper">
+      <section class="gallerySection">
+        <div class="CaptionWrapper">
+        <p class="Caption">Diana Vertus talk about what to expect at the Boston Business Women Conference on 7News - WHDH Boston.</p>
+        <p class="credit">Credit: WHDH-Channel 7</p>
+        </div>
+      </section>
+      </div>
+  </div>
+
+  <section class="SecondSection">
+    <div class="TextWrapper">
+        <p class="crosshead">
+          A huge problem on the surface
+        </p>
+        <p>
+        Venture capitalists are much less likely to invest in businesses and startups run by black men and women, especially in the tech industry. According to CD Insights, less than one percent of venture capital-funded tech businesses were owned by African-Americans. It’s a problem that Thomas has experienced first-hand.
+        </p>
+        <p>
+          “I’ve had situations where I’ve had venture capitalists who …  were like, ‘I’m not even going to waste my time talking to you,’” Thomas said. Though the venture capitalists had the same elite academic pedigree as Thomas, they couldn’t see past his skin color, he said. “The most hilarious part of it is that a couple years later some of them sent teams to actually try to invest in the company,” he said with a chuckle.
+        </p>
+        <p>
+          Lack of funding from venture capitalists isn’t just a problem for African Americans in the tech sector. Take Diana Vertus, a 35-year-old entrepreneur in Boston, for instance. Her company Exquisite Design Concepts offers customized event-planning services catered to her clients’ aesthetic and strategic goals. Though Vertus, an African American woman, has established herself as a motivated professional on the rise, she finds herself scratching and clawing for every opportunity to grow her business.
+        </p>
+        <p>
+          “I’ve been told my business is not investable,” she said. “Obviously, I can’t get a loan because I don’t have that capital. I don’t have any assets. I don’t have anything. …When I was looking for a loan they were telling me my business needs to be like seven years in business before I can even get a loan. So, until this day I’m still bootstrapping. Every dollar that I make goes right back into the business. We actually made our first hire this year.”
+        </p>
+        <p>
+          Vertus faces a challenge that many other African Americans can allude to. Initial perception. Vertus says that walking into a room and simply sitting down to talk business can be discouraging.
+        </p>
+        <p>
+          “It’s really difficult, “she said. “you are undermined in a lot of meetings. I go to a lot of meetings where I might be the only African American, or I might be the youngest and I look really young, so they’ll just undermine me automatically.”
+        </p>
+
+        <p class="Caption" style="color:steelblue; font-weight:bold;">There should be a visualization for VCs background</p>
+
+      </div>
+  </section>
+
+  <section class="SecondSection">
+    <div class="TextWrapper">
+        <p class="crosshead">
+          VCs don’t go to state colleges
+        </p>
+        <p>
+          But while appearances are a huge problem on the surface, there is much more that goes into denying entrepreneurs of funding.
+        </p>
+        <p>
+          Thomas said that even more fundamental than racism is rampant judgments made based on job candidate or venture candidate’s academic backgrounds. He said a look at the alma maters of tech companies’ management alma would almost all fall in the top-30 universities.
+        </p>
+        <p>
+          Academic elitism leads to another problem: connections dictating business decisions. A recent survey of 900 venture capitalists showed that of the businesses in which they invested, only 10 percent were discovered via cold calls from the funded companies’ management. The survey was done by four business professors from Harvard, Stanford, the University of Chicago, and the University of British Columbia.
+        </p>
+        <p>
+          This is significant for several reasons. Connections are made via college ties, professional affiliations, and personal affiliations. And since African-Americans for the most part don’t occupy the same educational and social circles as venture capitalists compared to white people and Asians, a huge potential source of funding isn’t available to people of color launching tech businesses.
+        </p>
+        <p>
+          While Thomas acknowledged that he is not an expert on the subject, he has worked in the tech industry for almost his entire professional career.
+        </p>
+        <p>
+          Thomas believes that the tech industry, to some extent, lives in a “bubble” made up of graduates from elite universities like Harvard, MIT, and Stanford. He believes the unwillingness to look for people from other backgrounds contributes greatly to why there are so few African-Americans in the tech industry.
+        </p>
+        <p>
+          “You don’t see a lot of VC’s that went to state colleges,” Thomas said. “You just don’t.”
+        </p>
+
+      </div>
+  </section>
+
+
+  <div class="photoGallery">
+    <div class="DudleyWrapper">
+      <section class="gallerySection">
+        <div class="CaptionWrapper">
+        <p class="Caption">	There are lot of African American entrepreneurs work in Dudley Cafe in Roxbury, as they don’t have their own office.</p>
+        <p class="credit">Credit: Shen Chen</p>
+        </div>
+      </section>
+      </div>
+
+      <div class="BankWrapper">
+        <section class="gallerySection">
+          <div class="CaptionWrapper">
+          <p class="Caption">Banks have notoriously strict, risk averse guidelines when it comes to giving loans to fund businesses and startups. </p>
+          <p class="credit">Credit: Pexels</p>
+          </div>
+        </section>
+        </div>
+    </div>
+
+    <section class="ThirdSection">
+      <div class="TextWrapper">
+          <p class="crosshead">
+            a lonely place
+          </p>
+          <p>
+            With little hope of courting investors, many entrepreneurs are forced to seek less desirable options like bank loans. And the situation is bleak in this funding realm, too.
+          </p>
+          <p>
+            Banks have notoriously strict, risk averse guidelines when it comes to giving loans to fund businesses and startups. Prospective borrowers must have substantial collateral for banks to feel comfortable giving loans for business ventures, and black families, particularly immigrant families, are much less likely to have the require collateral banks required. Even if they do have money, property, and a sterling credit report, banks turn down black people at a greater rate than their white counterparts with the same credentials.
+          </p>
+          <p>
+            What’s left when both banks and investors say no? Black entrepreneurs can ask their family members for help, but given the income divide between whites and blacks, this route may not be an option.
+          </p>
+          <p>
+            According to the Pew Research Foundation, black people are twice as likely as white people to be unemployed or poor, and families headed by a black person earn just more than half of families headed by a white person.
+          </p>
+          <p>
+            This leaves black entrepreneurs in a lonely place. Some put nearly every cent into their ventures, leaving them with no fall-back should their ventures not work out.
+          </p>
+          <p>
+            The financial and emotional pressures these ventures can put on families, especially those with less socio-economic standing, can be intense. Though Thomas came from a working-class family, his parents were instrumental in steering him toward the tech industry.
+          </p>
+          <p>
+            After Thomas’ mother found out his high school wanted to move him into a lower academic track, he said his “mom flipped out to put it mildly.” She went to the school to advocate for her son, and Thomas remembers her account if what she said. “He’s going to be in college prep or I am going to become the biggest pain you’ve ever experienced in your life,” said Thomas’ mother.
+          </p>
+          <p>
+            When Thomas went to his guidance counselor and told the counselor he planned to go to a local junior college, the counselor demanded he pick one of the top schools for his major.
+          </p>
+          <p>
+            “That was a major course correction from having sort of very low expectations,” said Thomas. He raised his standards and stuck to them.
+          </p>
+          <p>
+            James Lopata, a coach for executives and entrepreneurs at the Cambridge Innovation says this kind of experience is one reason blacks are less prevalent in the field of tech entrepreneurship.
+          </p>
+          <p>
+            Lopata cited a young black woman who was the CEO of a startup and came to him for mentoring. “She was told as a kid that if she could feed herself, that would be [enough],” Lopata said. She was brought up in a house where the bar for success was set about as low as possible, and learned early on that there are limits to her dreams and aspirations.
+          </p>
+
+        </div>
+    </section>
+
+
+    <div class="photoGallery">
+      <div class="KofiWrapper">
+        <section class="gallerySection">
+          <div class="CaptionWrapper">
+          <p class="Caption">	Executive Director Kofi Callender  and his folk.</p>
+          <p class="credit">Credit: Shen Chen</p>
+          </div>
+        </section>
+        </div>
+
+        <div class="AndyWrapper">
+          <section class="gallerySection">
+            <div class="CaptionWrapper">
+            <p class="Caption">	The members of Smarter in the city. </p>
+            <p class="credit">Credit: Shen Chen</p>
+            </div>
+          </section>
+          </div>
+      </div>
+
+      <section class="SecondSection">
+        <div class="TextWrapper">
+            <p class="crosshead">
+              increasing efforts to prick the bubble
+            </p>
+            <p>
+              There are increasing efforts to empower black entrepreneurs by providing more resources and mentorship in the industry. Boston, for example, has a startup accelerator known as Smarter in the City, a Roxbury organization that helps African-Americans get access to information and mentorship for their pursuits in the tech industry.
+            </p>
+            <p>
+              Organizations like this can provide workspace, collaboration opportunities, and connections for those who face added challenges because of their skin color. And organizations like Smarter in the City are popping up all over the country, particularly in areas where economic conditions are a challenge.
+            </p>
+            <p>
+              There are national organizations like Black Founders and Blacks in Technology advocating for more representation of black people in the tech industry and offering supports to entrepreneurs and future entrepreneurs, including grade school children.
+            </p>
+            <p>
+              Thomas said that entrepreneurs aren’t the only who benefit with more inclusive visions of lending and hiring. In fact, he said, it’s the lack of diversification that leads to companies collapsing. After all, if decision-makers don’t leave their “bubbles” filled with people who look, think, and are educated the same, they have no idea what’s truly happening with trends in their industries and society as a whole.
+            </p>
+            <p>
+              “Bubbles,” Thomas said, “are the chief cause of why companies become irrelevant.”
+            </p>
+          </div>
+      </section>
+
+</div>
+
+
+<h6 class="TheMargins_footer"><span class="TheMargins_footer">| The Margins | </span>is a project of the Media Innovation program at the Northeastern University School of Journalism. © 2017</h6>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
