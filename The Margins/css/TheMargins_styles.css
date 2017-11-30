@@ -284,6 +284,7 @@ span.TheMargins_footer {
   background-size: cover;
   background-position: center center;
   position: relative;
+  width:100%;
 }
 .ThomasWrapper
 {
