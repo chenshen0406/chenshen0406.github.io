@@ -1,0 +1,451 @@
+/* Hamburger nav and menu
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a
+{
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: orangered;
+}
+
+/*
+ * Black bar with logo
+ */
+
+.TheMargins_nav {
+    background-color: black;
+    height: 55px;
+    background-image: url(../images/TheMargins_logo_final.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 36px;
+
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 18px;
+  left: 20px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+    opacity: 0.9;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/* Basic text styles for The Margina
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+h1.TheMargins_head {
+    font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+    font-size: 7rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+    color:white;
+    margin-top: 10%;
+    font-weight: bold;
+    margin-top: -1rem;
+}
+
+h2.TheMargins_head {
+  font-family: "Sentinel-Medium","Georgia",serif;
+  /*font-family: "BentonSansComp-Bold","Helvetica",sans-serif,"Sentinel-Medium";*/
+    font-size: 3.4rem;
+    line-height: 3.6rem;
+    color:white;
+    margin-top: -1rem;
+}
+
+h3.TheMargins_head {
+  font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-weight: lighter;
+    color:white;
+    margin-top: 5rem;
+}
+
+div.TheMargins p {
+    font-family: "Georgia",serif;
+    font-size: 1.6rem;
+    line-height: 3rem;
+}
+
+.Caption
+{
+  /*background-color: rgba(0,0,0,0.4);*/
+  margin:5rem;
+  font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+  color: white;
+  font-size: 2rem;
+  font-weight:lighter;
+  line-height: 3rem;
+  /*margin-top: 20rem;*/
+}
+
+.credit {
+    font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+    font-size:  1.3rem;
+    line-height: 1.5rem;
+    font-weight: lighter;
+    color:white;
+    text-align: right;
+    margin-right: 3rem;
+    margin-top:-5rem;
+}
+
+.byline{
+  font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+  font-size:  1.5rem;
+  line-height: 1.5rem;
+  font-weight:bold;
+  color:black;
+  margin-top: 3rem;
+  text-align:left;
+  margin-right: 3rem;
+  /*letter-spacing: 0.1rem;*/
+}
+
+.crosshead{
+    text-transform: uppercase;
+    font-family: "Helvetica";
+    font-size: 3.4rem;
+    line-height: 10rem;
+    font-weight: bold;
+}
+
+a   {
+    text-decoration: none;
+    border-bottom: 3px #f6b700 solid;
+    color: #232323;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+    }
+
+a:visited {
+    color:black;
+    }
+
+a:hover {
+    color: #c59014;
+    font-weight: bold;
+    }
+
+a:active {
+    color: #f6b700;
+    }
+
+
+
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+h6.TheMargins_footer {
+    font-family: "Sentinel Medium","Georgia",serif;
+    color: #666;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: 0;
+    border-top: 1px solid #666;
+    padding: 20px;
+}
+
+span.TheMargins_footer {
+    font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.MainWrapper
+{
+  background: white url(images/Thomas1.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width:100%;
+}
+.ThomasWrapper
+{
+  background: white url(images/thomas2.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.diannaWrapper
+{
+  background: white url(images/dianna.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+  position: relative;
+  width: 100%;
+}
+
+.DudleyWrapper
+{
+  background: white url(images/dudleycafe.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+}
+
+.BankWrapper
+{
+  background: white url(images/bank.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+}
+.KofiWrapper
+{
+  background: white url(images/AndyAndKofi.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.AndyWrapper
+{
+  background: white url(images/Andy.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#banner
+{
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+  /*background: transparent;*/
+  height: 800px;
+}
+
+#banner .inner
+{
+  max-width: -webkit-fill-available;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top:200px;
+}
+#banner .inner
+{
+  max-width: -webkit-fill-available;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top:200px;
+
+}
+
+
+.IntroductionSection
+{
+  background: transparent;
+  color: black;
+  text-align:justify;
+  padding: 80px 0;
+  height:500px;
+}
+
+.gallerySection
+{
+  background: transparent;
+  color: black;
+  text-align:justify;
+  padding: 80px 0;
+  height:600px;
+}
+
+.CaptionWrapper{
+  position: absolute;
+  width: 100%;
+  height:auto;
+  background-color: rgba(0,0,0,0.4);
+  margin-top: 30%;
+}
+
+.FirstSection
+{
+  background: white;
+  color: black;
+  text-align:justify;
+  padding: 80px 0;
+  height:1200px;
+}
+
+.SecondSection
+{
+  background: white;
+  color: black;
+  text-align:justify;
+  padding: 80px 0;
+  height:600px;
+}
+
+.ThirdSection
+{
+  background: white;
+  color: black;
+  text-align:justify;
+  padding: 80px 0;
+  height:950px;
+}
+
+.TextWrapper
+{
+  max-width: 1080px;
+  margin: 0 auto;
+  /*margin-top: -60px;*/
+}
+
+#portrait{
+  width: 100%;
+}
+
+@media (max-width: 550px) {
+  #option1{
+    display: none;
+  }
+  #option2{
+    display: none;
+  }
+  #portrait{
+    display: none;
+  }
+}

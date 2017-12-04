@@ -168,7 +168,8 @@ h1.TheMargins_head {
 }
 
 h2.TheMargins_head {
-  font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+  font-family: "Sentinel-Medium","Georgia",serif;
+  /*font-family: "BentonSansComp-Bold","Helvetica",sans-serif,"Sentinel-Medium";*/
     font-size: 3.4rem;
     line-height: 3.6rem;
     color:white;
@@ -222,7 +223,7 @@ div.TheMargins p {
   margin-top: 3rem;
   text-align:left;
   margin-right: 3rem;
-  letter-spacing: -0.1rem;
+  /*letter-spacing: 0.1rem;*/
 }
 
 .crosshead{
@@ -282,7 +283,7 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: relative;
   width:100%;
 }
@@ -292,7 +293,7 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: relative;
 }
 
@@ -302,8 +303,9 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position:center;
   position: relative;
+  width: 100%;
 }
 
 .DudleyWrapper
@@ -312,8 +314,9 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: relative;
+  width: 100%;
 }
 
 .BankWrapper
@@ -322,8 +325,9 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: relative;
+
 }
 .KofiWrapper
 {
@@ -331,7 +335,7 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: relative;
 }
 .AndyWrapper
@@ -340,7 +344,7 @@ span.TheMargins_footer {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   position: relative;
 }
 
@@ -391,9 +395,9 @@ span.TheMargins_footer {
 .CaptionWrapper{
   position: absolute;
   width: 100%;
-  height: 150px;
+  height:auto;
   background-color: rgba(0,0,0,0.4);
-  margin-top: 40rem;
+  margin-top: 30%;
 }
 
 .FirstSection
@@ -428,4 +432,20 @@ span.TheMargins_footer {
   max-width: 1080px;
   margin: 0 auto;
   /*margin-top: -60px;*/
+}
+
+#portrait{
+  width: 100%;
+}
+
+@media (max-width: 550px) {
+  #option1{
+    display: none;
+  }
+  #option2{
+    display: none;
+  }
+  #portrait{
+    display: none;
+  }
 }

@@ -103,9 +103,9 @@ nav
   color: black;
   text-align: center;
   padding: 80px 0;
-  height:800px;
+  height:2800px;
 }
-.enducationSection
+/*.enducationSection
 {
   background: transparent;
   color: black;
@@ -144,7 +144,7 @@ nav
   text-align: center;
   padding: 80px 0;
   height:800px;
-}
+}*/
 
 
 .ageSection h2
@@ -156,7 +156,7 @@ nav
   font-size: 15px;
   letter-spacing: 3px;
 }
-.enducationSection h2
+/*.enducationSection h2
 {
   margin: 0;
   font-family: "futura",sans-serif;
@@ -206,13 +206,13 @@ nav
 {
   max-width: 1080px;
   margin: 0 auto;
-}
+}*/
 .ageWrapper
 {
   max-width: 1080px;
   margin: 0 auto;
 }
-.enducationWrapper
+/*.enducationWrapper
 {
   max-width: 1080px;
   margin: 0 auto;
@@ -236,7 +236,7 @@ nav
 {
   max-width: 1080px;
   margin: 0 auto;
-}
+}*/
 
 .MapSection
 {
@@ -313,6 +313,15 @@ nav
   text-align: left;
   font-family: "futura",sans-serif;
   font-size: 13px;
+}
+
+.trigger{
+  min-height: 400px;
+}
+.fixDiv{
+    position: fixed;
+    top: 200px;
+    left: 350px;
 }
 
 
