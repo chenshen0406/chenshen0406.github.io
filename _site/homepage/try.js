@@ -1,20 +1,28 @@
-var ageSvg = d3.select("#ageSvg"),
-    agemargin = {top: 20, right: 150, bottom: 30, left: 160},
-    width = +ageSvg.attr("width") - agemargin.left - agemargin.right,
-    height = +ageSvg.attr("height") - agemargin.top - agemargin.bottom,
-    Ag = ageSvg.append("g").attr("transform", "translate(" + agemargin.left + "," + agemargin.top + ")");
+    //
+    // d3.queue()
+    //   .defer(d3.csv, "nationRate.csv")
+    //   .await(function(error, RateData) {
 
-    var x = d3.scaleTime()
-        .rangeRound([0, width]);
+        d3.queue()
+          .defer(d3.csv, "nationRate.csv")
+          .awaitAll(function(error, data) {
 
-    var y = d3.scaleLinear()
-        .rangeRound([height, 0]);
+            var RateData = data[0];
 
-    d3.queue()
-      .defer(d3.csv, "nationRate.csv")
-      .await(function(error, RateData) {
-        //console.log(Ratedata);
+            RateData.forEach(function(d, i) {
 
+              for (var poop in d) {
+                var num = +d[poop];
+                var indexOfYR = poop.indexOf("[YR");
+                if (isNaN(num) == false) {
+                  d[poop] = num;
+                }
+
+              }
+
+            });
+
+            console.log(RateData);
 
 
 
@@ -31,14 +39,14 @@ var ageSvg = d3.select("#ageSvg"),
         });
         console.log(RateData);
 
-        var Ax = d3.scaleTime()
+        var x = d3.scaleTime()
             .rangeRound([0, width]);
 
-        var Ay = d3.scaleLinear()
+        var y = d3.scaleLinear()
             .rangeRound([height, 0]);
 
-        // var Az = d3.scaleOrdinal(d3.schemeGnBu[5]);
-        // var Az = d3.scaleOrdinal(d3.schemeRdYlBu[6]);
+        // var Az = d3.scaleOrdinal(d3.schemeSet3);
+        // var Az = d3.scaleOrdinal(d3.schemeYlGnBu[6]);
         // var Az = d3.scaleOrdinal(d3.schemePastel2);
         var Az = d3.scaleOrdinal(d3.schemeRdBu[6]);
 
@@ -51,59 +59,61 @@ var ageSvg = d3.select("#ageSvg"),
         var ageData = [];
         ageData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "20to34",
             value: d["20to34"]
           }
         }));
         ageData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "35to44",
             value: d["35to44"]
           }
         }));
         ageData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "45to54",
             value: d["45to54"]
           }
         }));
         ageData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "55to64",
             value: d["55to64"]
           }
         }));
+console.log(ageData);
+
 //////
 //RACEDATA
 var raceData = [];
     raceData.push(RateData.map(function(d) {
        return {
-         Year: d.Year,
+         Year: d.Year.getFullYear(),
          key: "White",
          value: d.White
        }
       }));
     raceData.push(RateData.map(function(d) {
          return {
-           Year: d.Year,
+           Year: d.Year.getFullYear(),
            key: "Black",
            value: d.Black
          }
         }));
      raceData.push(RateData.map(function(d) {
            return {
-             Year: d.Year,
+             Year: d.Year.getFullYear(),
              key: "Latino",
              value: d.Latino
            }
           }));
       raceData.push(RateData.map(function(d) {
              return {
-               Year: d.Year,
+               Year: d.Year.getFullYear(),
                key: "Asian",
                value: d.Asian
              }
@@ -114,14 +124,14 @@ var raceData = [];
 var veteranData = [];
     veteranData.push(RateData.map(function(d) {
        return {
-         Year: d.Year,
+         Year: d.Year.getFullYear(),
          key: "Veterans",
          value: d.Veterans
        }
       }));
     veteranData.push(RateData.map(function(d) {
         return {
-          Year: d.Year,
+          Year: d.Year.getFullYear(),
           key: "Non_Veterans",
           value: d.Non_Veterans
          }
@@ -132,14 +142,14 @@ var veteranData = [];
 var nativityData = [];
     nativityData.push(RateData.map(function(d) {
        return {
-         Year: d.Year,
+         Year: d.Year.getFullYear(),
          key: "Native",
          value: d.Native
        }
       }));
     nativityData.push(RateData.map(function(d) {
         return {
-          Year: d.Year,
+          Year: d.Year.getFullYear(),
           key: "Immigrant",
           value: d.Immigrant
          }
@@ -150,14 +160,14 @@ var nativityData = [];
 var genderData = [];
     genderData.push(RateData.map(function(d) {
        return {
-         Year: d.Year,
+         Year: d.Year.getFullYear(),
          key: "Male",
          value: d.Male
        }
       }));
     genderData.push(RateData.map(function(d) {
         return {
-          Year: d.Year,
+          Year: d.Year.getFullYear(),
           key: "Female",
           value: d.Female
          }
@@ -168,28 +178,28 @@ var genderData = [];
         var enducationData = [];
         enducationData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "Low",
             value: d.Low
           }
         }));
         enducationData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "HighSchool",
             value: d.HighSchool
           }
         }));
         enducationData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "College",
             value: d.College
           }
         }));
         enducationData.push(RateData.map(function(d) {
           return {
-            Year: d.Year,
+            Year: d.Year.getFullYear(),
             key: "Graduate",
             value: d.Graduate
           }
@@ -229,35 +239,35 @@ var controller = new ScrollMagic.Controller();
 // create a scene
 var sceneA = new ScrollMagic.Scene({triggerElement: "#trigger1", triggerHook:1, duration: 400})
   .on("enter", updateLineOne)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneB = new ScrollMagic.Scene({triggerElement: "#trigger2", triggerHook:1, duration: 400})
   .on("enter", updateLineTwo)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneC = new ScrollMagic.Scene({triggerElement: "#trigger3", triggerHook:1, duration: 400})
   .on("enter", updateLineThree)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneD = new ScrollMagic.Scene({triggerElement: "#trigger4", triggerHook:1, duration: 400})
   .on("enter", updateLineFour)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneE = new ScrollMagic.Scene({triggerElement: "#trigger5", triggerHook:1, duration: 400})
   .on("enter", updateLineFive)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneF = new ScrollMagic.Scene({triggerElement: "#trigger6", triggerHook:1, duration: 400})
   .on("enter", updateLineSix)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneF = new ScrollMagic.Scene({triggerElement: "#trigger7", triggerHook:1, duration: 400})
   .on("enter", updateLineSeven)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 var sceneG = new ScrollMagic.Scene({triggerElement: "#spacer0", triggerHook:1, duration: 400})
   .on("enter", updateLineEight)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
 
@@ -305,6 +315,11 @@ function updateLineEight() {
 
 
         function drawLines(data) {
+
+          x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
+          y.domain([0.1 , 0.7]);
+          // Az.domain(RateData.map(function(d){return d[0].key}));
+
           console.log(data);
           console.log('drawLines');
           var lines = Ag.selectAll(".linePath")
@@ -347,26 +362,40 @@ function updateLineEight() {
                     //
                     lines.exit()
                       .remove();
+
+        //  var linesText = Ag.selectAll("text")
+        //   .data(data);
+
+      // var linePath = Ag.selectAll("text")
+      //   .data(data);
+      //       linePath. append("text")
+      //               .datum(function(d) { return {key: d[0].key, value: d.value[d.value.length - 1]}; })
+      //               .attr("transform", function(d) { return "translate(" + x(d.value.Year) + "," + y(d.value.value) + ")"; })
+      //               .attr("x", 3)
+      //               .attr("dy", "0.35em")
+      //               .style("font", "10px sans-serif")
+      //               .text(function(d) { return d[0].key; });
+
+
         }
 
 
 
-              // var lines = Ag.selectAll("path")
-              //               .data(ageData);
-              //          lines. append("text")
-              //               // .attr("transform", function(d) { return "translate(" + x(d.Year) + "," + y(d.value) + ")"; })
-              //               .attr("x", 3)
-              //               .attr("dy", "0.35em")
-              //               .style("font", "10px sans-serif")
-              //               .text(function(d) { return d[0].key; })
-              //               console.log(lines);
 
+        // x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
+        // y.domain([0.1 , 0.7]);
+        // Az.domain(RateData.map(function(d){return d[0].key}));
 
-          Ag.append("g")
-              .attr("transform", "translate(0," + height + ")")
-              .call(d3.axisBottom(x))
-              .select(".domain")
-              .remove();
+        Ag.append("g")
+        			.attr("class", "axis axis-x")
+        			.attr("transform", "translate(0," + height + ")")
+        			.call(d3.axisBottom(x));
+          // Ag.append("g")
+          //     .attr("transform", "translate(0," + height + ")")
+          //     .call(d3.axisBottom(x))
+          //     .select(".domain")
+          //     .remove();
+
 
           Ag.append("g")
               .call(d3.axisLeft(y))
@@ -377,7 +406,11 @@ function updateLineEight() {
               .attr("dy", "0.71em")
               .attr("text-anchor", "end");
               // .text("Rate of New Entrepreneurs by age");
-              x.domain(d3.extent(RateData, function(d) { return d.Year; }));
-              y.domain([0.1 , 0.7]);
-              Az.domain(RateData.map(function(d){return d.id}));
+
+
+
+
+              // x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
+              // y.domain([0.1 , 0.7]);
+              // Az.domain(RateData.map(function(d){return d[0].key}));
       });

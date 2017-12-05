@@ -286,6 +286,7 @@ span.TheMargins_footer {
   background-position: center;
   position: relative;
   width:100%;
+  overflow: hidden;
 }
 .ThomasWrapper
 {
@@ -295,6 +296,7 @@ span.TheMargins_footer {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
 }
 
 .diannaWrapper
@@ -306,6 +308,7 @@ span.TheMargins_footer {
   background-position:center;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .DudleyWrapper
@@ -317,6 +320,7 @@ span.TheMargins_footer {
   background-position: center;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .BankWrapper
@@ -327,7 +331,7 @@ span.TheMargins_footer {
   background-size: cover;
   background-position: center;
   position: relative;
-
+  overflow: hidden;
 }
 .KofiWrapper
 {
@@ -337,6 +341,7 @@ span.TheMargins_footer {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
 }
 .AndyWrapper
 {
@@ -346,6 +351,7 @@ span.TheMargins_footer {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
 }
 
 #banner

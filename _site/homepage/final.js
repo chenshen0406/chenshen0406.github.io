@@ -28,7 +28,7 @@ d3.queue()
 
     });
 
-    // console.log(RateData);
+    console.log(RateData);
 
 
     var stateData = data[1];
@@ -46,7 +46,7 @@ d3.queue()
 
     });
 
-    // console.log(stateData);
+    console.log(stateData);
 
 
 
