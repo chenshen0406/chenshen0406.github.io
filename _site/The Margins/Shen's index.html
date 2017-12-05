@@ -48,7 +48,7 @@
 function changeImage()
 {
 var img = document.getElementById("portrait");
-img.src="images/portrait(2).jpg";
+img.src="images/portrait(1).jpg";
 return false;
 }
 
@@ -78,23 +78,24 @@ return false;
     -->
     <input type="checkbox" />
 
-    <!--
+   <!--
     Some spans to act as a hamburger.
     -->
     <span></span>
     <span></span>
     <span></span>
 
-    <ul id="menu">
-        <a href="#"><li>Article 1</li></a>
-        <a href="#"><li>Article 2</li></a>
-        <a href="#"><li>Article 3</li></a>
-        <a href="#"><li>Article 4</li></a>
-        <a href="#"><li>Article 5</li></a>
-        <a href="#"><li>Article 6</li></a>
-        <a href="http://www.northeastern.edu/rugglesmedia/"><li>More on Ruggles Media</li></a>
+   <ul id="menu">
+        <a href="http://www.northeastern.edu/rugglesmedia/TheMargins/a-new-identity"><li>A new identity beyond he and she</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/TheMargins/the-dream-act-might-be ending-soon"><li>The Dream Act might be ending soon. Here's why you should care.</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/TheMargins/between-choice-and-circumstance"><li>The Balance between choice and circumstance in Boston's inner city</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/TheMargins/it-takes-two-to-transition"><li>It takes two to transition</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/TheMargins/tech-was-supposed-to-be-the-great-equalizer"><li>Tech was supposed to be the great equalizer.
+So where are all the black people?</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/TheMargins/hacking-change"><li>Hacking change</li></a>
+        <a href="http://www.northeastern.edu/rugglesmedia/"><li>More from Ruggles Media</li></a>
 
-    </ul>
+   </ul>
   </div>
 </nav>
 
@@ -123,9 +124,7 @@ return false;
   <section class="IntroductionSection">
           <div class="CaptionWrapper">
             <div class="twelve columns">
-            <p class="Caption">	Corey Thomas, the CEO of Rapid7, a cyber security company that specializes
-              in data-analysis.Under him work 1,000 employees and his annual compensation
-              numbers extends seven figures. He is also a black man.</p>
+            <p class="Caption">	Corey Thomas,  of Rapid7, is one of the few African American CEOs in the U.S. There are fewer still in technology.</p>
             <p class="credit">Credit: Rapid 7</p>
             </div>
           </div>
@@ -144,10 +143,11 @@ return false;
             By Megan Mckee, Brooks Sutherland, Shen Chen, Patrick Johnston
             <hr style="border-bottom:0.1rem black solid; margin-top:-1.5rem;"/>
           </p>
+          <div class="twelve columns">
           <div class="crosshead">
-            <p class="twelve columns">
             THOMAS AND HIS COMPANY
           </div>
+        </div>
           <p class="twelve columns">
           On the 13th floor of a high-rise in Downtown Boston, amidst the hustle and bustle below is a man named Corey Thomas. He is the CEO of Rapid7, a cyber security company that specializes in data-analysis.
           </p>
@@ -163,9 +163,14 @@ return false;
 
           <div class="portraits">
             <div class="twelve columns">
+                <div id="portraitsTitle">The color of the Fortune 100</div>
+            </div>
+            <div class="portraitsButton">
+            <div class="eight columns">
               <button id="option1" onclick="changeImage();" style="color:steelblue">Show African American CEOs</button>
               <button id="option2" onclick="changeImageAgain();" style="color:steelblue">Show African American tech CEOs</button>
             </div>
+          </div>
               <div class="twelve columns">
             <img id="portrait" src="images/portrait.jpg" >
           </div>
@@ -178,6 +183,23 @@ return false;
           <p  class="twelve columns">
             It’s not just a lack of representation that’s a problem, black entrepreneurs face serious problems in their professional careers that their white counterparts do not. Most important is securing funding for their business idea.
           </p>
+
+
+          <div class="imgBox">
+            <img class="twelve columns" src="images/thomas2.jpg">
+              <div class="twelve columns">
+            <div class="mobileCaption">Under Corey Thomas’ work 1,000 employees and his annual compensation numbers extends seven figures.</div>
+            <div class="mobileCredit">Credit: Shen Chen</div>
+          </div>
+            <img class="twelve columns" src="images/dianna.jpg">
+                <div class="twelve columns">
+              <div class="mobileCaption">Diana Vertus, second from left, talks about challenges facing African American entrepreneurs at the Boston Business Women Conference on WHDH.</div>
+              <div class="mobileCredit">Credit: WHDH-Channel 7</div>
+              </div>
+         </div>
+
+
+       </div>
     </section>
   </center>
   </div>
@@ -201,7 +223,7 @@ return false;
       <section class="gallerySection">
         <div class="CaptionWrapper">
           <div class="twelve columns">
-        <p class="Caption">Diana Vertus talk about what to expect at the Boston Business Women Conference on 7News - WHDH Boston.</p>
+        <p class="Caption">Diana Vertus, second from left, talks about challenges facing African American entrepreneurs at the Boston Business Women Conference on WHDH.</p>
         <p class="credit">Credit: WHDH-Channel 7</p>
       </div>
         </div>
@@ -215,10 +237,10 @@ return false;
         <center>
   <section class="SecondSection">
     <div class="TextWrapper">
+      <div class="twelve columns">
         <div class="crosshead">
-          <p  class="twelve columns">
           A huge problem on the surface
-        </p>
+        </div>
         </div>
         <p class="twelve columns">
         Venture capitalists are much less likely to invest in businesses and startups run by black men and women, especially in the tech industry. According to CD Insights, less than one percent of venture capital-funded tech businesses were owned by African-Americans. It’s a problem that Thomas has experienced first-hand.
@@ -239,7 +261,7 @@ return false;
           “It’s really difficult, “she said. “you are undermined in a lot of meetings. I go to a lot of meetings where I might be the only African American, or I might be the youngest and I look really young, so they’ll just undermine me automatically.”
         </p>
 
-        <p class="Caption" style="color:steelblue; font-weight:bold;">There should be a visualization for VCs background</p>
+        <!-- <p class="Caption" style="color:steelblue; font-weight:bold;">There should be a visualization for VCs background</p> -->
 
       </div>
   </section>
@@ -248,16 +270,53 @@ return false;
 </div>
 </div>
 
+
+<section class="ageSection">
+        <div class="ageWrapper">
+          <div class="twelve columns">
+             <div id='ageTitle'>Rate of New Entrepreneurs from 1996 to 2016</div>
+             <p style="text-align:center;">
+               <span style="font-weight:bold">The Rate of New Entrepreneurs</span> in the economy: the percentage of adults becoming entrepreneurs in a given month.
+             </p>
+          </div>
+          <br><br>
+          <div class="chartBtn">
+          <button id="agebtn">BY AGE</button>
+          <button id="racebtn">BY RACE</button>
+          <button id="enducationbtn">BY enducation</button>
+          <button id="nativitybtn">BY nativity</button>
+          </div>
+
+          <!-- <div class="explanation">
+          <br><br>
+        <p>
+          <span style="font-weight:bold">The Rate of New Entrepreneurs</span> in the economy: the percentage of adults becoming entrepreneurs in a given month.
+        </p>
+        <br><br>
+      </div> -->
+
+          <div class="twelve columns">
+          <svg id="ageSvg" width = "960" height = "500"></svg>
+          </div>
+          <div class="tooltip">
+              <div class="tipName"></div>
+            </div>
+          <p class="source">Source from: <a href="http://www.kauffman.org/kauffman-index/reporting/startup-activity">THE KAUFFMAN INDEX</a>.</p>
+        </div>
+      </section>
+
+
+
 <div class="container">
   <div class="row">
     <div class="column TheMargins">
       <center>
   <section class="SecondSection">
     <div class="TextWrapper">
+      <div class="twelve columns">
         <div class="crosshead">
-          <p class="twelve columns">
           VCs don’t go to state colleges
-        </p>
+        </div>
         </div>
         <p class="twelve columns">
           But while appearances are a huge problem on the surface, there is much more that goes into denying entrepreneurs of funding.
@@ -282,6 +341,18 @@ return false;
         </p>
 
       </div>
+      <div class="imgBox">
+        <img class="twelve columns" src="images/dudleycafe.jpg">
+        <div class="twelve columns">
+      <div class="mobileCaption">	There are many  African American entrepreneurs without their own offices working in Dudley Cafe in Roxbury.</div>
+      <div class="mobileCredit">Credit: Shen Chen</div>
+      </div>
+        <img class="twelve columns" src="images/bank.jpg">
+        <div class="twelve columns">
+      <div class="mobileCaption">Banks have notoriously strict, risk averse guidelines when it comes to giving loans to fund businesses and startups. </div>
+      <div class="mobileCredit">Credit: Pexels</div>
+      </div>
+     </div>
   </section>
 </center>
 </div>
@@ -293,7 +364,7 @@ return false;
       <section class="gallerySection">
         <div class="CaptionWrapper">
           <div class="twelve columns">
-        <p class="Caption">	There are lot of African American entrepreneurs work in Dudley Cafe in Roxbury, as they don’t have their own office.</p>
+        <p class="Caption">	There are many  African American entrepreneurs without their own offices working in Dudley Cafe in Roxbury.</p>
         <p class="credit">Credit: Shen Chen</p>
         <div>
         </div>
@@ -318,10 +389,11 @@ return false;
           <center>
     <section class="ThirdSection">
       <div class="TextWrapper">
+        <div class="twelve columns">
           <div class="crosshead">
-            <p class="twelve columns">
+
             a lonely place
-          </p>
+          </div>
           </div>
           <p class="twelve columns">
             With little hope of courting investors, many entrepreneurs are forced to seek less desirable options like bank loans. And the situation is bleak in this funding realm, too.
@@ -356,8 +428,19 @@ return false;
           <p class="twelve columns">
             Lopata cited a young black woman who was the CEO of a startup and came to him for mentoring. “She was told as a kid that if she could feed herself, that would be [enough],” Lopata said. She was brought up in a house where the bar for success was set about as low as possible, and learned early on that there are limits to her dreams and aspirations.
           </p>
-
         </div>
+        <div class="imgBox">
+          <img class="twelve columns" src="images/AndyAndKofi.png">
+          <div class="twelve columns">
+        <div class="mobileCaption">Executive Director Kofi Callender and some of his co-workers.</div>
+        <div class="mobileCredit">Credit: Shen Chen</div>
+        </div>
+          <img class="twelve columns" src="images/Andy.png">
+          <div class="twelve columns">
+        <div class="mobileCaption">The members of Smarter in the City, a Roxbury organization that offers African-Americans information and mentorship.</div>
+        <div class="mobileCredit">Credit: Shen Chen</div>
+        </div>
+       </div>
     </section>
   </center>
   </div>
@@ -371,7 +454,7 @@ return false;
         <section class="gallerySection">
           <div class="CaptionWrapper">
             <div class="twelve columns">
-          <p class="Caption">	Executive Director Kofi Callender  and his folk.</p>
+          <p class="Caption">	 Executive Director Kofi Callender and some of his co-workers.</p>
           <p class="credit">Credit: Shen Chen</p>
         </div>
           </div>
@@ -382,7 +465,7 @@ return false;
           <section class="gallerySection">
             <div class="CaptionWrapper">
               <div class="twelve columns">
-            <p class="Caption">	The members of Smarter in the city. </p>
+            <p class="Caption">	The members of Smarter in the City, a Roxbury organization that offers African-Americans information and mentorship. </p>
             <p class="credit">Credit: Shen Chen</p>
           </div>
             </div>
@@ -396,10 +479,11 @@ return false;
             <center>
       <section class="SecondSection">
         <div class="TextWrapper">
+          <div class="twelve columns">
             <div class="crosshead">
-              <p class="twelve columns">
+
               increasing efforts to prick the bubble
-            </p>
+            </div>
             </div>
             <p class="twelve columns">
               There are increasing efforts to empower black entrepreneurs by providing more resources and mentorship in the industry. Boston, for example, has a startup accelerator known as Smarter in the City, a Roxbury organization that helps African-Americans get access to information and mentorship for their pursuits in the tech industry.
@@ -424,8 +508,16 @@ return false;
 </div>
 </div>
 
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <script src="https://d3js.org/d3-color.v1.min.js"></script>
+  <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+  <script src="js/margin.js"></script>
 
 <h6 class="TheMargins_footer"><span class="TheMargins_footer">| The Margins | </span>is a project of the Media Innovation program at the Northeastern University School of Journalism. © 2017</h6>
+
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

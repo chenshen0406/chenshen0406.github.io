@@ -380,7 +380,8 @@ function updateLineEight() {
         }
 
 
-
+        x.domain(["1996",2016]);
+        y.domain([0.1 , 0.7]);
 
         // x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
         // y.domain([0.1 , 0.7]);
@@ -389,11 +390,13 @@ function updateLineEight() {
         Ag.append("g")
         			.attr("class", "axis axis-x")
         			.attr("transform", "translate(0," + height + ")")
+              .attr("fill", "#000")
+              .select(".domain")
         			.call(d3.axisBottom(x));
           // Ag.append("g")
           //     .attr("transform", "translate(0," + height + ")")
           //     .call(d3.axisBottom(x))
-          //     .select(".domain")
+
           //     .remove();
 
 

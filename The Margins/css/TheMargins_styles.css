@@ -202,6 +202,15 @@ div.TheMargins p {
   line-height: 3rem;
   /*margin-top: 20rem;*/
 }
+@media (max-width: 550px){
+   .mobileCaption{
+     font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+     font-size: 1.3rem;
+     line-height: 1.6rem;
+     margin-top:1rem;
+     color:grey;
+   }
+}
 
 .credit {
     font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
@@ -213,7 +222,15 @@ div.TheMargins p {
     margin-right: 3rem;
     margin-top:-5rem;
 }
-
+@media (max-width: 550px){
+   .mobileCredit{
+     font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+     font-size:  1rem;
+     text-align: right;
+     color:grey;
+     margin-top:0.5rem;
+}
+}
 .byline{
   font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
   font-size:  1.5rem;
@@ -443,7 +460,24 @@ span.TheMargins_footer {
 #portrait{
   width: 100%;
 }
+#portraitsTitle{
+font-family: "futura",sans-serif;
+color: black;
+font-weight: 600;
+font-size: 3rem;
+letter-spacing: 3px;
+text-align:center;
+margin-bottom: 3rem;
 
+}
+
+.portraitsButton{
+  position:relative;
+  left: 20%;
+}
+.imgBox{
+  display:none;
+}
 @media (max-width: 550px) {
   #option1{
     display: none;
@@ -454,4 +488,80 @@ span.TheMargins_footer {
   #portrait{
     display: none;
   }
+.portraits{
+  display: none;
 }
+  .photoGallery{
+    display: none;
+  }
+.imgBox{
+  display: block;
+}
+
+
+}
+
+
+
+
+
+#ageTitle
+{
+  margin: 0;
+  font-family: "futura",sans-serif;
+  color: black;
+  font-weight: 600;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top:6rem;
+}
+
+.chartBtn{
+  position: relative;
+  left: 30%;
+
+}
+.ageSection{
+  overflow: hidden;
+}
+
+#ageSvg{
+  position:relative;
+  left: 18%;
+  margin-top: 3rem;
+}
+
+.source{
+  text-align: center;
+}
+.tooltip{
+  position: absolute;
+  width:350px;
+  height:80px;
+  background-color: #efebe7;
+  opacity:0;
+}
+
+.tipName{
+  text-align: center;
+  font-weight: bold;
+  font-family: "futura",sans-serif;
+  font-size: 20px;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 550px){
+   .ageSection{
+     display: none;
+   }
+   }
+}
+/*.explanation{
+  width:800px;
+  height: 50px;
+  background-color: #efebe7;
+  position:absolute;
+    left:35% ;
+}*/
