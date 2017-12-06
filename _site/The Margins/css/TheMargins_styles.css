@@ -574,11 +574,11 @@ margin-bottom: 3rem;
   margin-top:6rem;
 }
 
-.chartBtn{
+/*.chartBtn{
   position: relative;
   left: 30%;
 
-}
+}*/
 
 #source{
   text-align: center;
@@ -587,11 +587,11 @@ margin-bottom: 3rem;
   overflow: hidden;
 }
 
-#ageSvg{
+/*#ageSvg{
   position:relative;
   left: 18%;
   margin-top: 3rem;
-}
+}*/
 
 .source{
   text-align: center;

@@ -236,7 +236,7 @@ genderData.push(RateData.map(function(d) {
                 d3.select(this)
                   .transition()
                   .duration(500)
-                  .attr("stroke-width", 20);
+                  .attr("stroke-width", 20)
                   var tooltip= d3.select('.tooltip');
                   tooltip.transition()
                      .style('opacity',0.7)
