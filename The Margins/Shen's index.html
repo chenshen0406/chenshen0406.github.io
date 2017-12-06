@@ -59,6 +59,12 @@ img.src="images/portrait(3).jpg";
 return false;
 }
 
+function changeImageBack()
+{
+var img = document.getElementById("portrait");
+img.src="images/portrait.jpg";
+return false;
+}
 </script>
 
 </head>
@@ -166,9 +172,12 @@ So where are all the black people?</li></a>
                 <div id="portraitsTitle">The color of the Fortune 100</div>
             </div>
             <div class="portraitsButton">
-            <div class="eight columns">
+            <div class="twelve columns">
+              <center>
               <button id="option1" onclick="changeImage();" style="color:steelblue">Show African American CEOs</button>
               <button id="option2" onclick="changeImageAgain();" style="color:steelblue">Show African American tech CEOs</button>
+              <button id="option3" onclick="changeImageBack();" style="color:steelblue">Show Fortune 100 CEOs</button>
+            </center>
             </div>
           </div>
               <div class="twelve columns">

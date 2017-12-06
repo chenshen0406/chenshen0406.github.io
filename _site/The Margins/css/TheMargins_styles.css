@@ -210,6 +210,14 @@ div.TheMargins p {
      margin-top:1rem;
      color:grey;
    }
+   .Caption
+   {
+     margin:3rem;
+     font-size: 2rem;
+     font-weight:lighter;
+     line-height: 2.5rem;
+   }
+
 }
 
 .credit {
@@ -230,14 +238,18 @@ div.TheMargins p {
      color:grey;
      margin-top:0.5rem;
 }
+.credit {
+    margin-right: 3rem;
+    margin-top:2rem;
+}
 }
 .byline{
   font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
   font-size:  1.5rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
   font-weight:bold;
   color:black;
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align:left;
   margin-right: 3rem;
   /*letter-spacing: 0.1rem;*/
@@ -429,7 +441,14 @@ span.TheMargins_footer {
   padding: 80px 0;
   height:500px;
 }
+@media (max-width: 550px){
+  .IntroductionSection
+  {
+    padding: 80px 0;
+    height:300px;
+  }
 
+}
 .gallerySection
 {
   background: transparent;
@@ -511,15 +530,12 @@ margin-bottom: 3rem;
 
 }
 
-.portraitsButton{
-  position:relative;
-  left: 20%;
-}
+
 .imgBox{
   display:none;
 }
 @media (max-width: 550px) {
-  #option1{
+  /*#option1{
     display: none;
   }
   #option2{
@@ -527,7 +543,7 @@ margin-bottom: 3rem;
   }
   #portrait{
     display: none;
-  }
+  }*/
 .portraits{
   display: none;
 }
