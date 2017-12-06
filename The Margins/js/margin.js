@@ -150,29 +150,29 @@ genderData.push(RateData.map(function(d) {
 
 //////EDUCATIONDATA
 
-    var enducationData = [];
-    enducationData.push(RateData.map(function(d) {
+    var educationData = [];
+    educationData.push(RateData.map(function(d) {
       return {
         Year: d.Year.getFullYear(),
         key: "Low",
         value: d.Low
       }
     }));
-    enducationData.push(RateData.map(function(d) {
+    educationData.push(RateData.map(function(d) {
       return {
         Year: d.Year.getFullYear(),
         key: "HighSchool",
         value: d.HighSchool
       }
     }));
-    enducationData.push(RateData.map(function(d) {
+    educationData.push(RateData.map(function(d) {
       return {
         Year: d.Year.getFullYear(),
         key: "College",
         value: d.College
       }
     }));
-    enducationData.push(RateData.map(function(d) {
+    educationData.push(RateData.map(function(d) {
       return {
         Year: d.Year.getFullYear(),
         key: "Graduate",
@@ -195,8 +195,8 @@ genderData.push(RateData.map(function(d) {
     });
 
 
-    d3.select('#enducationbtn').on('click', function(){
-      drawLines(enducationData);
+    d3.select('#educationbtn').on('click', function(){
+      drawLines(educationData);
     });
 
 
@@ -271,9 +271,11 @@ genderData.push(RateData.map(function(d) {
                 lines.exit()
                   .remove();
 
-    //  var linesText = Ag.selectAll("text")
-    //   .data(data);
 
+
+  //    var linesText = Ag.selectAll("text")
+  //     .data(data);
+  //
   // var linePath = Ag.selectAll("text")
   //   .data(data);
   //       linePath. append("text")
@@ -313,8 +315,8 @@ genderData.push(RateData.map(function(d) {
           .attr("transform", "rotate(-90)")
           .attr("y", 6)
           .attr("dy", "0.71em")
-          .attr("text-anchor", "end");
-          // .text("Rate of New Entrepreneurs by age");
+          .attr("text-anchor", "end")
+          .text("Rate of New Entrepreneurs (%)");
 
 
 

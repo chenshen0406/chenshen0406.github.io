@@ -251,6 +251,30 @@ div.TheMargins p {
     font-weight: bold;
 }
 
+@media (max-width: 550px) {
+  .byline{
+    font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
+    font-size:  1.2rem;
+    line-height: 1.2rem;
+    font-weight:bold;
+    color:black;
+    margin-top: 2.5rem;
+    text-align:left;
+    margin-right: 2.5rem;
+    /*letter-spacing: 0.1rem;*/
+  }
+
+  .crosshead{
+      text-transform: uppercase;
+      font-family: "Helvetica";
+      font-size: 2.3rem;
+      line-height: 3.2rem;
+      font-weight: bold;
+      margin-bottom: 2.3rem;
+  }
+
+}
+
 a   {
     text-decoration: none;
     border-bottom: 3px #f6b700 solid;
@@ -449,7 +473,23 @@ span.TheMargins_footer {
   padding: 80px 0;
   height:950px;
 }
+@media (max-width: 550px){
+  .FirstSection
+  {
+    padding: 30px 0;
+  }
 
+  .SecondSection
+  {
+    padding: 30px 0;
+  }
+
+  .ThirdSection
+  {
+    padding: 30px 0;
+  }
+
+}
 .TextWrapper
 {
   max-width: 1080px;
@@ -523,6 +563,10 @@ margin-bottom: 3rem;
   left: 30%;
 
 }
+
+#source{
+  text-align: center;
+}
 .ageSection{
   overflow: hidden;
 }
@@ -558,10 +602,3 @@ margin-bottom: 3rem;
    }
    }
 }
-/*.explanation{
-  width:800px;
-  height: 50px;
-  background-color: #efebe7;
-  position:absolute;
-    left:35% ;
-}*/
