@@ -211,8 +211,8 @@ genderData.push(RateData.map(function(d) {
       y.domain([0.1 , 0.7]);
       // Az.domain(RateData.map(function(d){return d[0].key}));
 
-      console.log(data);
-      console.log('drawLines');
+      // console.log(data);
+      // console.log('drawLines');
       var lines = Ag.selectAll(".linePath")
         .data(data);
 
