@@ -281,12 +281,26 @@ nav
   background-color: white;
   display:none;
 }
-
-.tip {
-  opacity: 0;
-  background-color: #c8ac99;
+.tooltip p{
+  margin-left: 15px;
+  text-align: left;
   font-family: "futura",sans-serif;
   font-size: 13px;
+}
+/*.tip {
+  opacity: 0;
+  position: absolute;
+  font-family: "futura",sans-serif;
+  font-size: 13px;
+}*/
+
+.nationTooltip{
+  position: absolute;
+
+  width:350px;
+  height: 180px;
+  background-color: rgb(255,255,255);
+  opacity:0;
 }
 
 .tooltip{

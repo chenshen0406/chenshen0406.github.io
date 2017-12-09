@@ -380,10 +380,10 @@ function updateLineEight() {
         }
 
 
-        x.domain(["1996",2016]);
+        // x.domain([1996,2016]);
         y.domain([0.1 , 0.7]);
 
-        // x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
+        x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
         // y.domain([0.1 , 0.7]);
         // Az.domain(RateData.map(function(d){return d[0].key}));
 

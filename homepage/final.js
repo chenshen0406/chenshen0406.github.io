@@ -76,7 +76,7 @@ d3.queue()
     //nation line chart
 
     var nationSvg = d3.select("#nationSvg"),
-        nationMargin = {top: 20, right: 150, bottom: 30, left: 160},
+        nationMargin = {top: 20, right: 200, bottom: 30, left: 160},
         width = +nationSvg.attr("width") - nationMargin.left - nationMargin.right,
         height = +nationSvg.attr("height") - nationMargin.top - nationMargin.bottom,
         Ng = nationSvg.append("g").attr("transform", "translate(" + nationMargin.left + "," + nationMargin.top + ")");
@@ -167,18 +167,18 @@ d3.queue()
                    .attr("cy", function(d){ return y(d.nationIndex); })
 
                    .on("mouseover", function(d){
+                     var mydata= IndexData;
                      d3.select(this)
                        .transition()
                        .duration(500)
                        .attr("r", 20)
-
                        nationSvg.select(".tip")
                               .transition()
                          .style("opacity", "1")
-                         .attr("transform", "translate(" + (x(d.year) + nationMargin.left) + ", " + (y(d.nationIndex)/3) + ")")
+                         .attr("transform", "translate(" + (x(d.year) + nationMargin.left) + ", " + (y(d.nationIndex)- nationMargin.bottom) + ")")
                          .select("text")
                            .text('Startup Activity Index of ' + d.year.getFullYear() + ':' + d.nationIndex)
-                          //  .text(d.year.getFullYear());
+                      //     //  .text(d.year.getFullYear());
                      })
 
 
