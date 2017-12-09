@@ -65,6 +65,34 @@ var img = document.getElementById("portrait");
 img.src="images/portrait.jpg";
 return false;
 }
+
+function changeAge()
+{
+var img = document.getElementById("lineChart");
+img.src="images/age.jpg";
+return false;
+}
+
+function changeEducation()
+{
+var img = document.getElementById("lineChart");
+img.src="images/education.jpg";
+return false;
+}
+
+function changeRace()
+{
+var img = document.getElementById("lineChart");
+img.src="images/race.jpg";
+return false;
+}
+
+function changeNativity()
+{
+var img = document.getElementById("lineChart");
+img.src="images/nativity.jpg";
+return false;
+}
 </script>
 
 </head>
@@ -289,21 +317,27 @@ So where are all the black people?</li></a>
           <br><br>
           <div class="chartBtn">
             <center>
-          <button id="agebtn">BY AGE</button>
-          <button id="racebtn">BY RACE</button>
-          <button id="educationbtn">BY education</button>
-          <button id="nativitybtn">BY nativity</button>
+          <button id="agebtn" onclick="changeAge();" >BY AGE</button>
+          <button id="racebtn" onclick="changeRace();" >BY RACE</button>
+          <button id="educationbtn" onclick="changeEducation();" >BY education</button>
+          <button id="nativitybtn" onclick="changeNativity();" >BY nativity</button>
         </center>
           </div>
 
           <div class="twelve columns">
+            <center>
+        <img id="lineChart" style="width:55%;" src="images/age.jpg" >
+      </center>
+      </div>
+
+          <!-- <div class="twelve columns">
             <center>
           <svg id="ageSvg" width = "850" height = "500"></svg>
         </center>
           </div>
           <div class="tooltip">
               <div class="tipName"></div>
-            </div>
+            </div> -->
             <div id="explanation">
               <center>
               <img style="width:70%;" src="images/explanation.jpg">
@@ -522,9 +556,9 @@ So where are all the black people?</li></a>
 
     <!-- Story teases
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<head>    
+<head>
 <style>
-    h2.landing_page  {     
+    h2.landing_page  {
     font-family: "BentonSansComp-Bold","Helvetica",sans-serif;
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -533,7 +567,7 @@ So where are all the black people?</li></a>
     margin-top: 10px;
     border:none;
     }
-    
+
     h1.landing_page  {
     font-family: "Sentinel-Medium","Georgia",serif;
     font-size:3rem;
@@ -548,66 +582,66 @@ So where are all the black people?</li></a>
     }
 </style>
 </head>
-    
+
 <div class="container">
             <h1 class="landing_page">More stories from The Margins</h1>
 
     <div class="row landing_page">
         <div class="column TheMargins">
-        
+
     <div class="row">
      <div class="one-third column">
-        <a href="http://www.northeastern.edu/themargins/a-new-identity"> 
+        <a href="http://www.northeastern.edu/themargins/a-new-identity">
      	<img src="./images/rat_dress_teze.jpg" />
      		<h2 class="landing_page">A New Identity Beyond He and She</h2>
         </a>
      </div>
-         
+
      <div class="one-third column">
-            <a href="http://www.northeastern.edu/themargins/between-choice-and-circumstance"> 
+            <a href="http://www.northeastern.edu/themargins/between-choice-and-circumstance">
      	  <img src="./images/Tyrese_teze.jpg">
      		<h2 class="landing_page">The Balance Between Choice and Circumstance</h2>
             </a>
      </div>
-            
+
     <div class="one-third column">
-            <a href="http://www.northeastern.edu/rugglesmedia"> 
+            <a href="http://www.northeastern.edu/rugglesmedia">
      	  <img src="./images/university-campus2_teze.jpg" />
      		<h2 class="landing_page">More from Ruggles media</h2>
             </a>
      </div>
     </div>
-    
+
     <div class="row">
-              
+
      <div class="one-third column">
-            <a href="http://www.northeastern.edu/themargins/the-dream-act-might-be ending-soon" > 
+            <a href="http://www.northeastern.edu/themargins/the-dream-act-might-be ending-soon" >
      	  <img src="./images/immigration_teze.jpg" style="max-width:100%; height:auto" />
      		<h2 class="landing_page">The Dream Act might be ending soon. Here's why you should care.</h2>
             </a>
      </div>
-      
+
      <div class="one-third column">
-        <a href="http://www.northeastern.edu/themargins/it-takes-two-to-transition"> 
+        <a href="http://www.northeastern.edu/themargins/it-takes-two-to-transition">
      	<img src="./images/craig_kimma_teze.jpg" />
      		<h2 class="landing_page">It Takes Two to Transition</h2>
         </a>
      </div>
-         
+
      <div class="one-third column">
-            <a href="http://www.northeastern.edu/themargins/hacking-change"> 
+            <a href="http://www.northeastern.edu/themargins/hacking-change">
      	  <img src="./images/installation_teze.jpg" />
      		<h2 class="landing_page">Hacking Change</h2>
             </a>
      </div>
     </div>
-            
-        
+
+
         </div>
-            
+
     <!--
     <div class="one-third column">
-            <a href="http://www.northeastern.edu/rugglesmedia"> 
+            <a href="http://www.northeastern.edu/rugglesmedia">
      	  <img src="./images/installation.jpg" />
      		<h2 class="landing_page">More from Ruggles media</h2>
             </a>
@@ -617,8 +651,8 @@ So where are all the black people?</li></a>
 
 </div> <!-- close container -->
 
-    </div>    
-      
+    </div>
+
 
 <h6 class="TheMargins_footer"><span class="TheMargins_footer">| The Margins | </span>is a project of the Media Innovation program at the Northeastern University School of Journalism. © 2017</h6>
 
