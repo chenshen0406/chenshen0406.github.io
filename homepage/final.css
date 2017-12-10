@@ -61,7 +61,7 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 25px;
   letter-spacing: 8px;
 }
 
@@ -71,7 +71,7 @@ nav
   font-family: "Helvetica";
   color: black;
   font-weight:lighter;
-  font-size: 12px;
+  font-size: 13px;
 
 
 }
@@ -93,7 +93,7 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 3px;
 }
 
@@ -155,55 +155,9 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 3px;
 }
-/*.enducationSection h2
-{
-  margin: 0;
-  font-family: "futura",sans-serif;
-  color: black;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-.genderSection h2
-{
-  margin: 0;
-  font-family: "futura",sans-serif;
-  color: black;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-.nativitySection h2
-{
-  margin: 0;
-  font-family: "futura",sans-serif;
-  color: black;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-.raceSection h2
-{
-  margin: 0;
-  font-family: "futura",sans-serif;
-  color: black;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-.veteranSection h2
-{
-  margin: 0;
-  font-family: "futura",sans-serif;
-  color: black;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-*/
 .nationWrapper
 {
   max-width: 1080px;
@@ -214,31 +168,7 @@ nav
   max-width: 1080px;
   margin: 0 auto;
 }
-/*.enducationWrapper
-{
-  max-width: 1080px;
-  margin: 0 auto;
-}
-.genderWrapper
-{
-  max-width: 1080px;
-  margin: 0 auto;
-}
-.nativityWrapper
-{
-  max-width: 1080px;
-  margin: 0 auto;
-}
-.raceWrapper
-{
-  max-width: 1080px;
-  margin: 0 auto;
-}
-.veteranWrapper
-{
-  max-width: 1080px;
-  margin: 0 auto;
-}*/
+
 
 .MapSection
 {
@@ -317,7 +247,7 @@ nav
 }
 .explanation{
   width:500px;
-  height: 300px;
+  height: 350px;
   background-color: #efebe7;
   position:absolute;
     left:35% ;
