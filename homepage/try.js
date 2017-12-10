@@ -235,7 +235,7 @@ var genderData = [];
 
 //ScrollMagic
 var controller = new ScrollMagic.Controller();
-
+d3.select('.ageWrapper').style('opacity',0);
 // create a scene
 var sceneA = new ScrollMagic.Scene({triggerElement: "#trigger1", triggerHook:1, duration: 400})
   .on("enter", updateLineOne)
@@ -272,15 +272,19 @@ var sceneG = new ScrollMagic.Scene({triggerElement: "#spacer0", triggerHook:1, d
 
 
 function updateLineOne() {
+  console.log('lineOne');
   d3.select('.ageWrapper').style('opacity',0);
+  d3.select('.ageWrapper').classed('fixDiv', true);
 }
 function updateLineTwo() {
+  console.log('lineTwo');
   d3.select('.ageWrapper').style('opacity',1);
   d3.select('.ageWrapper').classed('fixDiv', true);
   drawLines(genderData);
   d3.select('#ageTitle').text('Rate of New Entrepreneurs by Gender');
 }
 function updateLineThree() {
+  console.log('lineThree');
   d3.select('.ageWrapper').classed('fixDiv', true);
   drawLines(veteranData);
   d3.select('#ageTitle').text('Rate of New Entrepreneurs by Veteran');
@@ -338,26 +342,48 @@ function updateLineEight() {
                 // .attr("stroke", "steelblue")
                 .attr("stroke-linejoin", "round")
                 .attr("stroke-linecap", "round")
-                .attr("stroke-width", 4)
+                .attr("stroke-width", 8)
                 .attr("opacity", 0)
                 .on("mouseover", function(d){
                     d3.select(this)
-                      .transition()
-                      .duration(500)
-                      .attr("stroke-width", 10)
-                      .attr("stroke", "#E2C93F")
+                      .attr("stroke-width", 13);
+                      // var lineTip = ageSvg.select(".lineTip")
+                      //        lineTip.transition()
+                      //           .style("opacity", "1")
+                      //           .style("left", (d3.event.pageX) + "px")
+                      //           .style("top", (d3.event.pageY) + "px")
+                      //           // .attr("transform", "translate(" + (x(d.Year) + agemargin.left) + ", " + (y(d[0].key)- agemargin.bottom) + ")")
+                      //           .select("text")
+                      //             .text(d[0].key)
+                      //             console.log(lineTip);
+                     //     //  .text(d.year.getFullYear());
+                      // .attr("stroke", "#E2C93F")
+                      var lineTooltip= d3.select('.lineTooltip');
+                      console.log(lineTooltip);
+                      lineTooltip.transition()
+                         .style('opacity',0.7)
+                         .style("left", (d3.mouse(this)[0]) + "px")
+                         .style("top", (d3.mouse(this)[1]-100) + "px")
+                         .style("display", "block");
+
+                         lineTooltip
+                                 .select('.tipName')
+                                 .text(d[0].key);
                     })
 
-                .on("mouseout", function(){
+                .on("mouseout", function(d,i){
                     d3.select(this)
                     .transition()
                     .duration(500)
-                    .attr("stroke-width", 4)
+                    .attr("stroke-width", 8)
                     .style("stroke", function(d) { return Az(d[0].key); })
+                    var lineTooltip= d3.select('.lineTooltip');
+                    lineTooltip.transition()
+                     .style('opacity',0);
                     // .attr("stroke", "steelblue");
                   })
                     .transition()
-                    .duration(2000)
+                    .duration(1000)
                     .attr("opacity",1);
                     //
                     lines.exit()
@@ -383,7 +409,7 @@ function updateLineEight() {
         // x.domain([1996,2016]);
         y.domain([0.1 , 0.7]);
 
-        x.domain(d3.extent(RateData, function(d) { return d.Year.getFullYear(); }));
+        x.domain(d3.extent(RateData, function(d) { return d.Year; }));
         // y.domain([0.1 , 0.7]);
         // Az.domain(RateData.map(function(d){return d[0].key}));
 
@@ -391,7 +417,6 @@ function updateLineEight() {
         			.attr("class", "axis axis-x")
         			.attr("transform", "translate(0," + height + ")")
               .attr("fill", "#000")
-              // .select(".domain")
         			.call(d3.axisBottom(x));
           // Ag.append("g")
           //     .attr("transform", "translate(0," + height + ")")

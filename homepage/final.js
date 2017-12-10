@@ -127,10 +127,16 @@ d3.queue()
       y.domain([-1.2 , 1.2]);
 
       Ng.append("g")
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x))
-        .select(".domain")
-          .remove();
+            .attr("class", "axis axis-x")
+            .attr("transform", "translate(0," + height + ")")
+            .attr("fill", "#000")
+            // .select(".domain")
+            .call(d3.axisBottom(x));
+      // Ng.append("g")
+      //     .attr("transform", "translate(0," + height + ")")
+      //     .call(d3.axisBottom(x))
+      //   .select(".domain")
+      //     .remove();
 
       Ng.append("g")
           .call(d3.axisLeft(y))
@@ -172,12 +178,22 @@ d3.queue()
                        .transition()
                        .duration(500)
                        .attr("r", 20)
-                       nationSvg.select(".tip")
+                      //  nationSvg.select(".tip")
+                //       .transition()
+                //  .style("opacity", "1")
+                //  .attr("transform", "translate(" + (x(d.year) + nationMargin.left) + ", " + (y(d.nationIndex)- nationMargin.bottom) + ")")
+                //  .select("text")
+                //    .text('Startup Activity Index of ' + d.year.getFullYear() + ':' + d.nationIndex)
+
+                        d3.select(".tip")
                               .transition()
                          .style("opacity", "1")
-                         .attr("transform", "translate(" + (x(d.year) + nationMargin.left) + ", " + (y(d.nationIndex)- nationMargin.bottom) + ")")
-                         .select("text")
-                           .text('Startup Activity Index of ' + d.year.getFullYear() + ':' + d.nationIndex)
+                         .style("position","absolute")
+                         .style("left", (d3.event.pageX)+ (nationMargin.left/2) + "px")
+                         .style("top", (d3.event.pageY) + "px")
+                        //  .style('top',((y(d.nationIndex)-nationMargin.bottom+950)+'px'))
+                        //  .style('left',((x(d.year + nationMargin.left)+'px')))
+                         .text('Startup Activity Index of ' + d.year.getFullYear() + ':' + d.nationIndex)
                       //     //  .text(d.year.getFullYear());
                      })
 
@@ -185,7 +201,7 @@ d3.queue()
 
                    .on("mouseout", function(){
                      d3.select(this).transition().duration(500).attr("r", 5);
-                     nationSvg.select(".tip")
+                     d3.select(".tip")
                             .transition()
                        .style("opacity", "0")
                    });
@@ -793,7 +809,7 @@ d3.queue()
 
 // set up colorscale
   var colorScale = d3.scaleLinear()
-    .domain([-3.7,0,3.3])
+    .domain([-3.7,0,3.7])
     // .range(["#cbab99","white","steelblue"])
 
     .range(["#f8f6d7","#E2C93F","#8f583b"])
@@ -836,19 +852,20 @@ var portraits = d3.select("#portraits")
           })
 
           // .attr("stroke", "white")
-          // .attr("stroke-width", 1)
+          // .attr("stroke-width", 2)
           .attr("fill", function(d,i) {
             return myFill(d);
           })
           .on("mouseover", function(d,i) {
             var mydata = dataLookup[d.id];
             d3.select(this)
-            .attr("fill", "#d2cfc4")
-            .attr("stroke-width",3);
+            .attr("fill", "#4c363a")
+            // .attr("stroke", "#52331b")
+            // .attr("stroke-width",4);
             var tooltip= d3.select('.tooltip');
                 tooltip.transition()
                        .style('opacity',0.7)
-                       .style("left", (d3.event.pageX) + "px")
+                       .style("left", (d3.event.pageX)+ 100 + "px")
                        .style("top", (d3.event.pageY) + "px")
                        .style("display", "block");
 
@@ -880,27 +897,17 @@ var portraits = d3.select("#portraits")
 
       .on("mouseout", function(d,i) {
           d3.select(this)
+          // .attr("stroke", myFill(d))
+          //   .attr("stroke-width", 2)
           .attr("fill", myFill(d));
           tooltip.transition()
                  .style('opacity',0);
         });
 
+        // d3.select("#colorRect")
+        //   .attr("fill",colorScale);
 
 
-
-//   var points = [
-//   {"name": "MA", "coords": [-71.3824,42.4072]},
-// ];
-//
-// var points = svg.selectAll("circle")
-//   .data(points);
-//
-// points.enter().append("circle")
-//   .attr("fill", "white")
-//   .attr("r", 10)
-//   .attr("transform", function(d){
-//     return "translate(" + proj(d.coords) + ")";
-//   })
   });
 
 

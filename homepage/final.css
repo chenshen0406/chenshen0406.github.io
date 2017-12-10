@@ -203,12 +203,12 @@ nav
   font-size: 15px;
   letter-spacing: 3px;
 }
-
+*/
 .nationWrapper
 {
   max-width: 1080px;
   margin: 0 auto;
-}*/
+}
 .ageWrapper
 {
   max-width: 1080px;
@@ -287,16 +287,20 @@ nav
   font-family: "futura",sans-serif;
   font-size: 13px;
 }
-/*.tip {
-  opacity: 0;
-  position: absolute;
+.tip {
+  width: 230px;
+  /*min-height: 20px;*/
+  background-color: #efebe7;
+  padding:10px;
+  z-index: 100;
+  text-align: left;
   font-family: "futura",sans-serif;
   font-size: 13px;
-}*/
+  opacity: 0;
+}
 
 .nationTooltip{
   position: absolute;
-
   width:350px;
   height: 180px;
   background-color: rgb(255,255,255);
@@ -338,10 +342,47 @@ nav
 .fixDiv{
     position:fixed;
     top: 25%;
-    left: 25%;
+    left: 20%;
 }
 
+.lineTooltip{
+  position: absolute;
+  width:250px;
+  height:60px;
+  background-color: #efebe7;
+  opacity:0;
+}
 
+.tipName{
+  text-align: center;
+  font-weight: bold;
+  font-family: "futura",sans-serif;
+  font-size: 20px;
+  margin-top:1rem;
+}
+#colorRect{
+  background: linear-gradient(to right, #f8f6d7,#E2C93F,#8f583b);
+  position: absolute;
+  height:0.4%;
+  width:24%;
+  left:50%;
+  /*border:1px solid #000;*/
+}
+.unit1{
+  position: absolute;
+  top:86.2%;
+  left:49%;
+}
+.unit2{
+  position: absolute;
+  top:86.2%;
+  left:61%;
+}
+.unit3{
+  position: absolute;
+  top:86.2%;
+  left:73%;
+}
 /*#portraits{
   height:window.innerHeight;
 }*/
