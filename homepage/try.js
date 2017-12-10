@@ -391,7 +391,7 @@ function updateLineEight() {
         			.attr("class", "axis axis-x")
         			.attr("transform", "translate(0," + height + ")")
               .attr("fill", "#000")
-              .select(".domain")
+              // .select(".domain")
         			.call(d3.axisBottom(x));
           // Ag.append("g")
           //     .attr("transform", "translate(0," + height + ")")
