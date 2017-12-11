@@ -851,8 +851,8 @@ var portraits = d3.select("#portraits")
             return path(d);
           })
 
-          // .attr("stroke", "white")
-          // .attr("stroke-width", 2)
+          .attr("stroke", "white")
+          .attr("stroke-width", 1)
           .attr("fill", function(d,i) {
             return myFill(d);
           })

@@ -432,8 +432,8 @@ function updateLineEight() {
               .attr("transform", "rotate(-90)")
               .attr("y", 6)
               .attr("dy", "0.71em")
-              .attr("text-anchor", "end");
-              // .text("Rate of New Entrepreneurs by age");
+              .attr("text-anchor", "end")
+              .text("Rate of New Entrepreneurs (%)");
 
 
 
