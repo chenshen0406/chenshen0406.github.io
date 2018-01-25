@@ -74,6 +74,9 @@ d3.queue()
     // console.log(changeData);
 
     //nation line chart
+    // var nationWidth = d3.select("#nationSvg")
+    //                   .attr("width", window.innerWidth)
+
 
     var nationSvg = d3.select("#nationSvg"),
         nationMargin = {top: 20, right: 200, bottom: 30, left: 160},
