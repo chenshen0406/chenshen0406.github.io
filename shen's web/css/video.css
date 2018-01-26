@@ -9,6 +9,7 @@
   height: 90%;
 }
 
+
 .title{
   color:#000;
   /*font-family:'Andale Mono', monospace;*/
@@ -53,18 +54,19 @@ padding:0;
     font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
     text-align: center;
     font-size: 16px;
-    display:block;
-    width:100px;
+    /*display:block;*/
+    /*width:100px;*/
     text-decoration:none;
+    /*border-right:  1px solid #95908D;*/
 }
 
-#menu{
+/*#menu{
   position:absolute;
   text-align: center;
   margin-top: 15%;
   margin-left: 23%;
 
-}
+}*/
 
 #menu a:active {
     color: #f6b700;
@@ -87,7 +89,7 @@ padding:0;
 img{
   margin-top:10%;
   position:relative;
-  width: 70%;
+  /*width: 70%;*/
   margin-bottom: 3%;
 }
 .information{
@@ -95,7 +97,6 @@ img{
   font-size: 17px;
   text-align:center;
   font-weight: bold;
-  color:#000;
 }
 .caption{
   font-family: "STKaiti";
@@ -106,12 +107,11 @@ img{
 }
 
 .information a:active {
-    color: #f6b700;
+    color: #c8ac99;
     }
 
 .information a{
   color:#c8ac99;
-    /*color:#bdb7b1;*/
     font-family: "Wawati SC";
     font-size: 30px;
     font-weight:bolder;
@@ -119,14 +119,11 @@ img{
     transition: color 0.3s ease;
 }
 
-/*.mag p{
-  color:#c8ac99;
-  font-family: "Wawati SC";
-  font-size: 30px;
-}*/
+
 .information a:hover {
+    text-decoration: none;
+    color: #c8ac99;
     font-weight:bolder;
     border-bottom:6px #aaa275 dotted;
-    /*padding-top: 10px ;*/
     padding-bottom: 3px;
     }
