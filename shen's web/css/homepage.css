@@ -9,6 +9,18 @@
   height: 90%;
 }
 
+@media (max-width: 576px) {
+
+  #canvas{
+    margin-top: 35%;
+    margin-bottom: 15%;
+    height: 1800px;
+  }
+
+
+
+ }
+
 .title{
   color:#000;
   /*font-family:'Andale Mono', monospace;*/
@@ -119,14 +131,13 @@ padding:0;
   background-size: cover;
 }
 
+
+
+
 .myImg{
-  /*margin-top:10%;*/
-  /*margin-top:5%;*/
-  /*position:relative;*/
-  /*width: 45%;*/
+  margin-top:5%;
   margin-bottom: 5%;
 }
-
 
 
 .aboutMe{
