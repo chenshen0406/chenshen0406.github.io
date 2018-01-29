@@ -75,12 +75,13 @@ d3.queue()
 
     //nation line chart
     // var nationWidth = d3.select("#nationSvg")
-    //                   .attr("width", window.innerWidth)
+    //                   .attr("width", 0.3 * window.innerWidth)
 
 
     var nationSvg = d3.select("#nationSvg"),
         nationMargin = {top: 20, right: 200, bottom: 30, left: 160},
         width = +nationSvg.attr("width") - nationMargin.left - nationMargin.right,
+        // width = +nationWidth - nationMargin.left - nationMargin.right,
         height = +nationSvg.attr("height") - nationMargin.top - nationMargin.bottom,
         Ng = nationSvg.append("g").attr("transform", "translate(" + nationMargin.left + "," + nationMargin.top + ")");
 
