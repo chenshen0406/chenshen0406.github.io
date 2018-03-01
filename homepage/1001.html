@@ -47,10 +47,12 @@
       var popup = new mapboxgl.Popup({ offset: [0, -15] })
 
         .setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.Storyteller + '</h3><p>' + feature.properties.Date + '</h3><p>' + feature.properties.Place + '</h3><p>' + feature.properties.Keywords +'</p>')
+        .setHTML('<audio controls="controls"> <source src="music.ogg" />  <source src="map.mp3" />  </audio> '+ '<h3>'+ feature.properties.Storyteller + '</h3><p>' + feature.properties.Date + '</h3><p>' + feature.properties.Place + '</h3><p>' + feature.properties.Keywords +'</p>')
         .setLngLat(feature.geometry.coordinates)
         .addTo(map);
     });
+
+    
 
     </script>
   </body>
