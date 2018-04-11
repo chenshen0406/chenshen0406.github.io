@@ -142,6 +142,7 @@ d3.queue()
       //   .select(".domain")
       //     .remove();
 
+
       Ng.append("g")
           .call(d3.axisLeft(y))
           .append("text")

@@ -261,11 +261,11 @@ var sceneF = new ScrollMagic.Scene({triggerElement: "#trigger6", triggerHook:1, 
   .on("enter", updateLineSix)
   // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
-var sceneF = new ScrollMagic.Scene({triggerElement: "#trigger7", triggerHook:1, duration: 400})
+var sceneG = new ScrollMagic.Scene({triggerElement: "#trigger7", triggerHook:1, duration: 400})
   .on("enter", updateLineSeven)
   // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
-var sceneG = new ScrollMagic.Scene({triggerElement: "#spacer0", triggerHook:1, duration: 400})
+var sceneH = new ScrollMagic.Scene({triggerElement: "#spacer0", triggerHook:1, duration: 400})
   .on("enter", updateLineEight)
   // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);

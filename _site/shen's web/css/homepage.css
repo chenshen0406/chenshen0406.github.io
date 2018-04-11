@@ -1,0 +1,201 @@
+#canvas{
+  margin-top: 5%;
+  margin-bottom: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #95908D;
+  height: 90%;
+}
+
+@media (max-width: 576px) {
+
+  #canvas{
+    margin-top: 35%;
+    margin-bottom: 15%;
+    height: 1800px;
+  }
+
+
+
+ }
+
+.title{
+  color:#000;
+  /*font-family:'Andale Mono', monospace;*/
+  font-family: fantasy;
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+  margin-bottom: -10px;
+  margin-top: 50px;
+  /*margin-top: 100px;*/
+}
+
+
+.email, .tel{
+
+  color:#95908D;
+  /*font-family: "futura",sans-serif;*/
+  font-family:'Andale Mono', monospace;
+    /*display: inline-block;*/
+    /*width: 50%;*/
+    float: left;
+  text-align:center;
+  font-size: 16px;
+  font-weight:50;
+  /*display:block;*/
+}
+
+#menu ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+
+}
+
+#menu li{
+  display: inline;
+  float:left;
+}
+
+#menu a{
+    color:#95908D;
+    font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+    text-align: center;
+    font-size: 16px;
+    /*display:block;*/
+    /*width:100px;*/
+    text-decoration:none;
+    /*border-right:  1px solid #95908D;*/
+}
+
+/*#menu{
+  /*position: fixed;*/
+  /*position:absolute;
+  text-align: center;*/
+  /*margin-top: 1%;*/
+  /*margin-top: 15%;
+  margin-left: 23%;*/
+}*/
+
+/*.page-divider{
+    margin-top: 0.5em;
+    font-size: 14px;
+    border-bottom-width: 2px;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+    width: 100%;
+}*/
+
+#menu a:active {
+    color: #f6b700;
+    }
+
+#menu  a   {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+#menu a   {
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+    }
+
+#menu a:hover {
+    font-weight:bolder;
+    border-bottom:6px #f6b700 dotted;
+    /*padding-top: 8px;*/
+    padding-bottom: 8px;
+    }
+
+/*.mainWrapper{
+  background: white url('pics/introduction.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width:100%;
+  overflow: hidden;
+}*/
+
+.mainWrapper{
+  background-image: url('pics/introduction1.jpg');
+  min-height:1080px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+.myImg{
+  margin-top:5%;
+  margin-bottom: 5%;
+}
+
+
+.aboutMe{
+  font-family: "STKaiti";
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.publishNews a:active {
+    color: #c8ac99;
+    }
+
+.publishNews a{
+    color:#000;
+    font-family: "Wawati SC";
+    font-size: 22px;
+    font-weight:normal;
+    text-decoration:none;
+    transition: color 0.3s ease;
+}
+
+
+.publishNews a:hover {
+    text-decoration: none;
+    color: #c8ac99;
+    font-weight:bolder;
+    }
+
+.readMore a:active {
+    color: #c8ac99;
+    }
+
+.readMore a{
+  color:#c8ac99;
+    font-family: "STHeiti";
+    font-size: 13px;
+    font-weight:bolder;
+    text-decoration:none;
+    transition: color 0.3s ease;
+}
+
+
+.readMore a:hover {
+    text-decoration: none;
+    color: #c8ac99;
+    font-weight:bolder;
+    /*border-bottom:6px #aaa275 dotted;*/
+    padding-bottom: 3px;
+    }
+
+.date p{
+  font-size: 13px;
+  color:#95908D;
+  font-family: "STHeiti";
+}
+
+.newsContent p{
+  font-family: "STHeiti";
+  font-size: 13px;
+}

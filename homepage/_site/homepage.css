@@ -1,0 +1,144 @@
+body {
+  /*display:block;*/
+  /*flex-direction: column;*/
+  /*background: #4682B4;*/
+  background: linear-gradient(to bottom, #4682B4, white);
+}
+
+
+#menu ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+  color:#FFF;
+
+}
+
+#menu li{
+  display: inline;
+  float:left;
+}
+
+#menu a{
+    color:#FFF;
+    font-family: 'Helvetica';
+    text-align: center;
+    font-size: 15px;
+    display:block;
+    width:100px;
+    text-decoration:none;
+    border-right:  2px solid #FFF;
+}
+
+#menu{
+  position: fixed;
+  top:20px;
+  left: 0px;
+}
+
+
+#bigTitle{
+  display: block;
+  position:relative;
+  font-family: 'Helvetica';
+  top:-400px;
+  left:0px;
+  color: #FFF;
+  font-size: 65px;
+  text-align: center;
+  /*font-weight: bold;*/
+}
+
+/*#time{
+  position:relative;
+  top:-470px;
+  left:100px;
+  color: #FFF;
+  font-family: 'Helvetica';
+  font-size: 20px;
+
+}*/
+
+#author{
+
+  display:block;
+  position:relative;
+  font-family: 'Helvetica';
+  top:-400px;
+  left:10px;
+  color: #FFF;
+  font-size: 25px;
+  text-align: center;
+  font-weight: lighter;
+}
+
+#introduction{
+  font-family: 'Comic Sans MS';
+  font-size: 15pt;
+  color: 	#000;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top:740px;
+  left:200px;
+}
+.main {
+    display:block;
+    padding: 6em;
+    height: 90vh;
+    justify-content: center;
+    align-items: middle;
+}
+
+.clockbox,
+#clock {
+    width: 1150px;
+}
+
+
+
+.hour-marks {
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 6;
+    stroke-miterlimit: 8;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 1;
+    stroke-miterlimit: 10;
+}
+
+
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+/* Optional: Use transition for animation. */
+#hour{
+      transform-origin: 300px 300px;
+}
+#minute {
+    transform-origin: 300px 300px;
+}
+#second {
+    transform-origin: 300px 300px;
+}

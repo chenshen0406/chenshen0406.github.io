@@ -61,7 +61,7 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 15px;
   letter-spacing: 8px;
 }
 
@@ -71,7 +71,7 @@ nav
   font-family: "Helvetica";
   color: black;
   font-weight:lighter;
-  font-size: 13px;
+  font-size: 11px;
 
 
 }
@@ -93,7 +93,7 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   letter-spacing: 3px;
 }
 
@@ -155,7 +155,7 @@ nav
   font-family: "futura",sans-serif;
   color: black;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   letter-spacing: 3px;
 }
 .nationWrapper
@@ -246,11 +246,11 @@ nav
   opacity:0;
 }
 .explanation{
-  width:550px;
+  width:35%;
   height: 400px;
   background-color: #efebe7;
-  position:absolute;
-    left:35% ;
+  /*position:absolute;*/
+    /*left:35% ;*/
 }
 .tipStates{
   text-align: center;
@@ -271,7 +271,7 @@ nav
 }
 .fixDiv{
     position:fixed;
-    top: 25%;
+    top: 15%;
     left: 20%;
 }
 
