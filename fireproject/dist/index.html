@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+   	 	<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div class='container'>
+
+				<div class='viewOne' id='random-dots'>
+					<div class="inner">
+					    <h1>Terrorism in the United States From 1996 to 2016</h1>
+					</div>
+
+					<div class="tooltip">
+						<div class="tipCity"></div>
+						<p class="tipDate"></p>
+						<p class="tipAttack"></p>
+						<p class="tipTarget"></p>
+						<p class="tipNkill"></p>
+						<p class="tipNwound"></p>
+					</div>
+
+					<img class="explanationPic" src="./img/explanation.png">
+					<img class="timelinePic" src="./img/timeline.png">
+		   </div>
+
+
+			<div class='scroll-container'>
+			<div class='scroll-scene'  style='position:absolute;top:100%' id='dots-group' ></div>
+			<div class='scroll-scene' style='position:absolute;top:200%' id='map-animation'></div>
+			<div class='scroll-scene' style='position:absolute;top:300%' id='scene-3' ></div>
+		</div>
+	</div>
+
+		<script src='./bundle.js' type='text/javascript'></script>
+		<script src="https://d3js.org/d3-color.v1.min.js"></script>
+		<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<script src="https://d3js.org/topojson.v2.min.js"></script>
+
+	</body>
+</html>
